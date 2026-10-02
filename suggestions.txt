@@ -1,0 +1,1139 @@
+Acer campestre - CP 300/400
+Acer campestre - CP 400/500
+Acer cappadocicum 'Rubrum' - CP 10/12
+Acer cappadocicum 'Rubrum' - CP 12/14
+Acer cappadocicum 'Rubrum' - CP 14/16
+Acer cappadocicum 'Rubrum' - CP 16/18
+Acer cappadocicum 'Rubrum' - CP 6/8
+Acer cappadocicum 'Rubrum' - CP 8/10
+Acer ginnala - CP 175/200
+Acer ginnala - CP 200/250
+Acer ginnala - CP 250/300
+Acer ginnala - CP 300/400
+Acer negundo 'Flamingo' - CP 175/200
+Acer negundo 'Flamingo' - CP 200/250
+Acer palmatum - CP 100/125
+Acer palmatum - CP 125/150
+Acer palmatum - CP 150/175
+Acer palmatum - CP 175/200
+Acer palmatum - CP 200/250
+Acer palmatum - CP 250/300
+Acer palmatum - CP 300/400
+Acer palmatum - CP 400/500
+Acer palmatum - CP 80/100
+Acer palmatum 'Atropurpureum' - CP 100/125
+Acer palmatum 'Atropurpureum' - CP 80/100
+Acer pseudoplatanus - CP 175/200
+Acer pseudoplatanus - CP 200/250
+Acer pseudoplatanus - CP 250/300
+Acer pseudoplatanus - CP 300/400
+Acer rubrum - CP 10/12
+Acer rubrum - CP 8/10
+Acer saccharinum 'Pyramidale' - CP 200/250
+Acer x freemanii 'Automn Blaze' - CP 300/400
+Acer x freemanii 'Celebration' - CP 250/300
+Amelanchier - CP 200/250
+Amelanchier - CP 250/300
+Amelanchier - CP 175/200
+Amelanchier x lamarckii - CP 175/200
+Amelanchier x lamarckii - CP 200/250
+Castanea sativa - CP 175/200
+Castanea sativa - CP 200/250
+Castanea sativa - CP 250/300
+Castanea sativa - CP 300/400
+Cercis siliquastrum - CP 150/175
+Cercis siliquastrum - CP 175/200
+Cercis siliquastrum - CP 200/250
+Cercis siliquastrum - CP 250/300
+Cercis siliquastrum - CP 300/400
+Chitalpa tashkentensis - CP 150/175
+Chitalpa tashkentensis - CP 175/200
+Chitalpa tashkentensis - CP 200/250
+Chitalpa tashkentensis - CP 300/400
+Chitalpa tashkentensis - CP 400/500
+Cornus controversa - CP 12/14
+Cornus controversa - CP 14/16
+Cornus controversa - CP 16/18
+Cornus controversa - CP 175/200
+Cornus controversa - CP 18/20
+Cornus controversa - CP 20/25
+Cornus controversa - CP 200/250
+Cornus controversa - CP 250/300
+Cornus controversa - CP 300/400
+Cornus mas - CP 175/200
+Cornus mas - CP 250/300
+Cornus mas - CP 200/250
+Lagerstroemia (Fleurs roses) - CP 175/200
+Ligustrum japonicum - CP 200/250
+Liquidambar styraciflua - CP 200/250
+Liquidambar styraciflua - CP 250/300
+Liquidambar styraciflua - CP 300/400
+Liquidambar styraciflua - CP 400/500
+Liquidambar styraciflua - CP 6/8
+Liquidambar styraciflua - CP 8/10
+Magnolia grandiflora - CP 200/250
+Magnolia stellata - CP 200/250
+Malus coccinella courtarou - CP 175/200
+Malus coccinella courtarou - CP 200/250
+Malus coccinella courtarou - CP 250/300
+Malus coccinella courtarou - CP 300/400
+Malus 'Comtesse de paris' - CP 175/200
+Malus 'Comtesse de paris' - CP 250/300
+Malus 'Evereste' - CP 175/200
+Malus 'Evereste' - CP 250/300
+Malus 'Evereste' - CP 300/400
+Malus 'Prairifire' - CP 200/250
+Malus 'Prairifire' - CP 250/300
+Malus 'Van Eseltine' - CP 175/200
+Malus 'Van Eseltine' - CP 200/250
+Malus 'Van Eseltine' - CP 250/300
+Malus 'Van Eseltine' - CP 300/400
+Malus 'Van Eseltine' - CP 400/500
+Parrotia persica - CP 200/250
+Parrotia persica - CP 250/300
+Parrotia persica - CP 300/400
+Photinia x fraseri 'Red Robin' - CP 150/175
+Photinia x fraseri 'Red Robin' - CP 250/300
+Prunus - CP 300/400
+Prunus - CP 400/500
+Prunus 'Accolade' - CP 175/200
+Prunus 'Accolade' - CP 200/250
+Prunus 'Accolade' - CP 250/300
+Prunus 'Accolade' - CP 300/400
+Prunus 'Accolade' - CP 400/500
+Prunus 'Accolade' - CP 500+
+Prunus cerasifera 'Pissardii' - CP 250/300
+Prunus cerasifera 'Pissardii' - CP 300/400
+Prunus 'Okame' - CP 175/200
+Prunus 'Okame' - CP 200/250
+Prunus 'Okame' - CP 250/300
+Prunus 'Okame' - CP 300/400
+Prunus padus - CP 200/250
+Prunus padus - CP 250/300
+Prunus padus - CP 300/400
+Prunus padus - CP 400/500
+Prunus padus 'Colorata' - CP 175/200
+Prunus serrulata 'Kanzan' - CP 175/200
+Prunus serrulata 'Kanzan' - CP 200/250
+Prunus serrulata 'Kanzan' - CP 300/400
+Prunus serrulata 'Kanzan' - CP 400/500
+Prunus x subhirtella 'Fukubana' - CP 250/300
+Prunus x subhirtella 'Fukubana' - CP 300/400
+Quercus cerris - CP 200/250
+Quercus cerris - CP 250/300
+Quercus cerris - CP 300/400
+Quercus palustris - CP 200/250
+Quercus palustris - CP 250/300
+Quercus suber - CP 200/250
+Quercus suber - CP 250/300
+Quercus suber - CP 300/400
+Sorbus aria - CP 12/14
+Tilia cordata - CP 200/250
+Tilia cordata - CP 250/300
+Tilia cordata - CP 300/400
+Citrus x junos 'Yuzu' - DT 10/12
+Citrus x junos 'Yuzu' - DT 8/10
+Juglans regia - DT 14/16
+Malus franc - DT 8/10
+Photinia x fraseri 'Red Robin' - DT 12/14
+Prunus serrulata 'Kanzan' - DT 18/20
+Prunus serrulata 'Kanzan' - DT 20/25
+Prunus x subhirtella 'Autumnalis Rosea' - DT 14/16
+Prunus x subhirtella 'Autumnalis Rosea' - DT 20/25
+Prunus x subhirtella 'Autumnalis Rosea' - DT 25/30
+Prunus x subhirtella 'Pendula Rubra' - DT 18/20
+Prunus x subhirtella 'Pendula Rubra' - DT 20/25
+Prunus x subhirtella 'Pendula Rubra' - DT 25/30
+Acer negundo 'Flamingo' - FN 150/175
+Acer platanoides - FN 125/150
+Acer platanoides - FN 150/175
+Amelanchier - FN 150/175
+Amelanchier x lamarckii - FN 150/175
+Castanea sativa - FN 150/175
+Cercis siliquastrum - FN 100/125
+Cercis siliquastrum - FN 125/150
+Cercis siliquastrum - FN 80/100
+Cornus florida - FN 150/175
+Cornus florida - FN 175/200
+Cornus florida - FN 200/250
+Cornus florida - FN 250/300
+Cornus hongkongensis - FN 150/175
+Cornus kousa - FN 150/175
+Cornus kousa - FN 200/250
+Cornus kousa - FN 250/300
+Cornus kousa - FN 80/100
+Cornus mas - FN 150/175
+Lagerstroemia (Fleurs fuchsias) - FN 125/150
+Lagerstroemia (Fleurs fuchsias) - FN 150/175
+Lagerstroemia (Fleurs roses) - FN 125/150
+Lagerstroemia (Fleurs roses) - FN 150/175
+Lagerstroemia (Fleurs violettes) - FN 125/150
+Lagerstroemia (Fleurs violettes) - FN 150/175
+Lagerstroemia indica - FN 150/175
+Magnolia grandiflora - FN 175/200
+Magnolia liliiflora 'Nigra' - FN 125/150
+Magnolia liliiflora 'Nigra' - FN 150/175
+Magnolia stellata - FN 175/200
+Magnolia Susan - FN 125/150
+Magnolia x soulangeana - FN 125/150
+Magnolia x soulangeana - FN 150/175
+Parrotia persica - FN 125/150
+Parrotia persica - FN 150/175
+Parrotia persica - FN 175/200
+Prunus cerasifera 'Pissardii' - FN 175/200
+Prunus padus - FN 175/200
+Prunus padus 'Colorata' - FN 175/200
+Prunus 'Umineko' - FN 125/150
+Prunus 'Umineko' - FN 150/175
+Prunus 'Umineko' - FN 175/200
+Prunus 'Umineko' - FN 200/250
+Quercus cerris - FN 175/200
+Quercus ilex - FN 125/150
+Quercus ilex - FN 150/175
+Quercus ilex - FN 175/200
+Quercus ilex - FN 200/250
+Quercus ilex - FN 250/300
+Quercus ilex - FN 300/400
+Quercus robur - FN 150/175
+Quercus suber - FN 175/200
+Sorbus aucuparia 'Autumn spire flame' - FN 175/200
+Sorbus aucuparia 'Autumn spire flame' - FN 200/250
+Sorbus torminalis - FN 150/175
+Sorbus torminalis - FN 175/200
+Tilia cordata - FN 175/200
+Zanthoxylum piperitum - FN 125/150
+Zanthoxylum piperitum - FN 150/175
+Acer buergerianum - T 6/8
+Acer campestre - T 10/12
+Acer campestre - T 12/14
+Acer campestre - T 14/16
+Acer campestre - T 16/18
+Acer campestre - T 18/20
+Acer campestre - T 6/8
+Acer campestre - T 8/10
+Acer cappadocicum - T 10/12
+Acer cappadocicum - T 12/14
+Acer cappadocicum - T 16/18
+Acer cappadocicum - T 18/20
+Acer cappadocicum - T 20/25
+Acer cappadocicum - T 8/10
+Acer cappadocicum 'Rubrum' - T 10/12
+Acer cappadocicum 'Rubrum' - T 12/14
+Acer cappadocicum 'Rubrum' - T 14/16
+Acer cappadocicum 'Rubrum' - T 16/18
+Acer cappadocicum 'Rubrum' - T 18/20
+Acer cappadocicum 'Rubrum' - T 6/8
+Acer cappadocicum 'Rubrum' - T 8/10
+Acer monspessulanum - T 6/8
+Acer platanoides - T 10/12
+Acer platanoides - T 12/14
+Acer platanoides - T 14/16
+Acer platanoides - T 16/18
+Acer platanoides - T 18/20
+Acer platanoides - T 25/30
+Acer platanoides - T 6/8
+Acer platanoides - T 8/10
+Acer platanoides 'Royal Red' - T 6/8
+Acer platanoides 'Royal Red' - T 8/10
+Acer pseudoplatanus - T 10/12
+Acer pseudoplatanus - T 12/14
+Acer pseudoplatanus - T 14/16
+Acer pseudoplatanus - T 16/18
+Acer pseudoplatanus - T 20/25
+Acer pseudoplatanus - T 25/30
+Acer pseudoplatanus - T 6/8
+Acer pseudoplatanus - T 8/10
+Acer pseudoplatanus 'Bruchem' - T 10/12
+Acer pseudoplatanus 'Bruchem' - T 6/8
+Acer pseudoplatanus 'Bruchem' - T 8/10
+Acer pseudoplatanus 'Purpurascens' - T 10/12
+Acer pseudoplatanus 'Purpurascens' - T 6/8
+Acer rubrum - T 10/12
+Acer rubrum - T 14/16
+Acer rubrum - T 16/18
+Acer rubrum - T 18/20
+Acer rubrum - T 8/10
+Acer saccharinum - T 10/12
+Acer saccharinum - T 12/14
+Acer saccharinum - T 14/16
+Acer saccharinum - T 6/8
+Acer saccharinum - T 8/10
+Acer saccharinum 'Pyramidale' - T 10/12
+Acer saccharinum 'Pyramidale' - T 12/14
+Acer saccharinum 'Pyramidale' - T 14/16
+Acer saccharinum 'Pyramidale' - T 6/8
+Acer saccharinum 'Pyramidale' - T 8/10
+Acer x freemanii 'Automn Blaze' - T 10/12
+Acer x freemanii 'Automn Blaze' - T 6/8
+Acer x freemanii 'Automn Blaze' - T 8/10
+Acer x freemanii 'Celebration' - T 10/12
+Acer x freemanii 'Celebration' - T 12/14
+Acer x freemanii 'Celebration' - T 14/16
+Acer x freemanii 'Celebration' - T 6/8
+Acer x freemanii 'Celebration' - T 8/10
+Aesculus hippocastanum - T 10/12
+Aesculus hippocastanum - T 12/14
+Aesculus hippocastanum - T 14/16
+Aesculus hippocastanum - T 6/8
+Aesculus hippocastanum - T 8/10
+Albizia julibrissin - T 6/8
+Alnus glutinosa - T 12/14
+Alnus glutinosa - T 14/16
+Alnus glutinosa - T 16/18
+Alnus glutinosa - T 18/20
+Alnus x spaethii - T 10/12
+Alnus x spaethii - T 12/14
+Alnus x spaethii - T 14/16
+Alnus x spaethii - T 16/18
+Alnus x spaethii - T 8/10
+Carpinus betulus - T 10/12
+Carpinus betulus - T 12/14
+Carpinus betulus - T 14/16
+Carpinus betulus - T 8/10
+Catalpa - T 10/12
+Catalpa - T 6/8
+Catalpa - T 8/10
+Chitalpa tashkentensis - T 10/12
+Chitalpa tashkentensis - T 12/14
+Chitalpa tashkentensis - T 6/8
+Chitalpa tashkentensis - T 8/10
+Fraxinus angustifolia 'Raywood' - T 10/12
+Fraxinus angustifolia 'Raywood' - T 12/14
+Fraxinus angustifolia 'Raywood' - T 6/8
+Fraxinus angustifolia 'Raywood' - T 8/10
+Fraxinus excelsior - T 10/12
+Fraxinus excelsior - T 12/14
+Fraxinus excelsior - T 14/16
+Fraxinus excelsior - T 16/18
+Fraxinus excelsior - T 8/10
+Gleditsia triacanthos 'Sunburst' - T 14/16
+Gleditsia triacanthos 'Sunburst' - T 16/18
+Gleditsia triacanthos 'Sunburst' - T 18/20
+Gleditsia triacanthos 'Sunburst' - T 20/25
+Juglans regia - T 10/12
+Juglans regia - T 14/16
+Juglans regia - T 8/10
+Liquidambar styraciflua - T 6/8
+Liquidambar styraciflua - T 8/10
+Liriodendron tulipifera - T 10/12
+Magnolia x soulangeana - T 6/8
+Malus coccinella courtarou - T 6/8
+Malus 'Evereste' - T 6/8
+Malus 'Evereste' - T 8/10
+Malus franc - T 10/12
+Malus franc - T 12/14
+Malus franc - T 8/10
+Morus alba - T 10/12
+Morus alba - T 6/8
+Morus 'Kagayamae' fruitless - T 12/14
+Morus 'Kagayamae' fruitless - T 16/18
+Morus 'Kagayamae' fruitless - T 18/20
+Morus 'Kagayamae' fruitless - T 6/8
+Morus 'Kagayamae' fruitless - T 8/10
+Prunus 'Accolade' - T 10/12
+Prunus 'Accolade' - T 6/8
+Prunus 'Accolade' - T 8/10
+Prunus avium - T 18/20
+Prunus avium - T 25/30
+Prunus avium - T 30/35
+Prunus cerasifera 'Pissardii' - T 10/12
+Prunus cerasifera 'Pissardii' - T 6/8
+Prunus cerasifera 'Pissardii' - T 8/10
+Prunus mahaleb - T 10/12
+Prunus mahaleb - T 8/10
+Prunus padus - T 12/14
+Prunus padus - T 16/18
+Prunus padus - T 6/8
+Prunus padus - T 8/10
+Prunus serrulata 'Amanogawa' - T 8/10
+Prunus serrulata 'Kanzan' - T 10/12
+Prunus serrulata 'Kanzan' - T 6/8
+Prunus serrulata 'Kanzan' - T 8/10
+Quercus cerris - T 10/12
+Quercus coccinea - T 10/12
+Quercus coccinea - T 12/14
+Quercus coccinea - T 20/25
+Quercus ilex - T 10/12
+Quercus ilex - T 8/10
+Quercus palustris - T 10/12
+Quercus palustris - T 12/14
+Quercus palustris - T 14/16
+Quercus palustris - T 16/18
+Quercus palustris - T 18/20
+Quercus palustris - T 20/25
+Quercus palustris - T 6/8
+Quercus palustris - T 8/10
+Quercus rubra - T 10/12
+Quercus rubra - T 6/8
+Quercus rubra - T 8/10
+Robinia pseudoacacia - T 18/20
+Robinia pseudoacacia - T 20/25
+Robinia pseudoacacia 'Casque Rouge' - T 10/12
+Robinia pseudoacacia 'Casque Rouge' - T 12/14
+Robinia pseudoacacia 'Casque Rouge' - T 14/16
+Robinia pseudoacacia 'Casque Rouge' - T 16/18
+Robinia pseudoacacia 'Casque Rouge' - T 18/20
+Robinia pseudoacacia 'Casque Rouge' - T 20/25
+Robinia pseudoacacia 'Frisia' - T 10/12
+Robinia pseudoacacia 'Frisia' - T 12/14
+Robinia pseudoacacia 'Frisia' - T 14/16
+Robinia pseudoacacia 'Frisia' - T 8/10
+Salix alba 'Tristis' - T 10/12
+Salix alba 'Tristis' - T 12/14
+Salix alba 'Tristis' - T 14/16
+Salix alba 'Tristis' - T 16/18
+Salix alba 'Tristis' - T 18/20
+Salix alba 'Tristis' - T 8/10
+Salix viminalis - T 10/12
+Salix viminalis - T 12/14
+Salix viminalis - T 14/16
+Salix viminalis - T 16/18
+Salix viminalis - T 18/20
+Salix viminalis - T 8/10
+Sorbus aria - T 14/16
+Sorbus aria - T 16/18
+Sorbus aria - T 18/20
+Tilia - T 16/18
+Tilia - T 18/20
+Tilia - T 25/30
+Tilia - T 30/35
+Tilia cordata - T 10/12
+Tilia cordata - T 14/16
+Tilia cordata - T 16/18
+Tilia cordata - T 18/20
+Tilia cordata - T 6/8
+Tilia cordata - T 8/10
+Tilia platyphyllos - T 14/16
+Tilia platyphyllos - T 16/18
+Tilia tomentosa - T 10/12
+Tilia tomentosa - T 12/14
+Tilia tomentosa - T 6/8
+Tilia tomentosa - T 8/10
+Tilia x euchlora - T 10/12
+Tilia x euchlora - T 12/14
+Tilia x euchlora - T 6/8
+Tilia x euchlora - T 8/10
+Ulmus 'Resista Sapporo Gold' - T 10/12
+Ulmus 'Resista Sapporo Gold' - T 12/14
+Ulmus 'Resista Sapporo Gold' - T 14/16
+Ulmus 'Resista Sapporo Gold' - T 6/8
+Ulmus 'Resista Sapporo Gold' - T 8/10
+Zelkova serrata 'Green Vase' - T 6/8
+Zelkova serrata 'Green Vase' - T 8/10
+Acer x freemanii 'Celebration' - TBB 20/25
+Alnus glutinosa - TBB 10/12
+Alnus glutinosa - TBB 12/14
+Alnus glutinosa - TBB 14/16
+Alnus glutinosa - TBB 150/175
+Alnus glutinosa - TBB 16/18
+Alnus glutinosa - TBB 175/200
+Alnus glutinosa - TBB 18/20
+Alnus glutinosa - TBB 20/25
+Alnus glutinosa - TBB 200/250
+Alnus glutinosa - TBB 25/30
+Alnus glutinosa - TBB 250/300
+Alnus glutinosa - TBB 300/400
+Alnus glutinosa - TBB 400/500
+Alnus glutinosa - TBB 8/10
+Castanea sativa - TBB 10/12
+Castanea sativa - TBB 12/14
+Castanea sativa - TBB 14/16
+Castanea sativa - TBB 8/10
+Fagus sylvatica - TBB 150/175
+Fagus sylvatica - TBB 175/200
+Fagus sylvatica - TBB 200/250
+Fagus sylvatica - TBB 250/300
+Fagus sylvatica - TBB 300/400
+Fagus sylvatica 'Dawyck' - TBB 300/400
+Fagus sylvatica 'Dawyck' - TBB 400/500
+Fagus sylvatica 'Purpurea' - TBB 100/125
+Fagus sylvatica 'Purpurea' - TBB 125/150
+Fagus sylvatica 'Purpurea' - TBB 150/175
+Fagus sylvatica 'Purpurea' - TBB 175/200
+Fagus sylvatica 'Swat Magret' - TBB 12/14
+Fagus sylvatica 'Swat Magret' - TBB 14/16
+Fagus sylvatica 'Swat Magret' - TBB 16/18
+Fagus sylvatica 'Swat Magret' - TBB 18/20
+Fagus sylvatica 'Swat Magret' - TBB 20/25
+Fagus sylvatica 'Swat Magret' - TBB 250/300
+Fagus sylvatica 'Swat Magret' - TBB 300/400
+Liquidambar styraciflua - TBB 10/12
+Liquidambar styraciflua - TBB 12/14
+Liquidambar styraciflua - TBB 14/16
+Liquidambar styraciflua - TBB 150/175
+Liquidambar styraciflua - TBB 16/18
+Liquidambar styraciflua - TBB 18/20
+Liquidambar styraciflua - TBB 20/25
+Liquidambar styraciflua - TBB 25/30
+Liquidambar styraciflua - TBB 30/35
+Liquidambar styraciflua - TBB 6/8
+Liquidambar styraciflua - TBB 8/10
+Liquidambar styraciflua Worplesdon - TBB 10/12
+Liquidambar styraciflua Worplesdon - TBB 12/14
+Liquidambar styraciflua Worplesdon - TBB 14/16
+Liquidambar styraciflua Worplesdon - TBB 16/18
+Liquidambar styraciflua Worplesdon - TBB 18/20
+Liquidambar styraciflua Worplesdon - TBB 6/8
+Prunus serrulata 'Amanogawa' - TBB 175/200
+Prunus serrulata 'Amanogawa' - TBB 250/300
+Quercus cerris - TBB 10/12
+Quercus cerris - TBB 12/14
+Quercus cerris - TBB 14/16
+Quercus cerris - TBB 6/8
+Quercus cerris - TBB 8/10
+Quercus ilex - TBB 12/14
+Quercus ilex - TBB 175/200
+Quercus ilex - TBB 200/250
+Quercus ilex - TBB 250/300
+Quercus ilex - TBB 6/8
+Quercus ilex - TBB 8/10
+Quercus palustris - TBB 10/12
+Quercus palustris - TBB 12/14
+Quercus palustris - TBB 14/16
+Quercus palustris - TBB 6/8
+Quercus palustris - TBB 8/10
+Quercus suber - TBB 10/12
+Quercus suber - TBB 12/14
+Sorbus torminalis - TBB 6/8
+Sorbus torminalis - TBB 8/10
+Abelia 'Edward Goucher' - TF 125/150
+Abelia 'Edward Goucher' - TF 150/175
+Abelia x grandiflora - TF 100/125
+Abelia x grandiflora - TF 125/150
+Abelia x grandiflora - TF 175/200
+Abelia x grandiflora - TF 80/100
+Acer campestre - TF 125/150
+Acer campestre - TF 80/100
+Acer negundo 'Flamingo' - TF 80/100
+Acer platanoides - TF 100/125
+Acer platanoides - TF 80/100
+Alnus glutinosa - TF 175/200
+Amelanchier - TF 125/150
+Amelanchier canadensis - TF 100/125
+Amelanchier canadensis - TF 125/150
+Amelanchier x lamarckii - TF 100/125
+Amelanchier x lamarckii - TF 125/150
+Amelanchier x lamarckii - TF 80/100
+Arbutus unedo - TF 100/125
+Arbutus unedo - TF 125/150
+Arbutus unedo - TF 80/100
+Aronia arbutifolia - TF 125/150
+Aronia arbutifolia - TF 150/175
+Aronia melanocarpa - TF 100/125
+Aronia melanocarpa - TF 125/150
+Aronia melanocarpa - TF 80/100
+Berberis julianae - TF 100/125
+Berberis julianae - TF 125/150
+Berberis julianae - TF 150/175
+Berberis julianae - TF 80/100
+Berberis pourpres - TF 175/200
+Berberis pourpres - TF 200/250
+Buddleja - TF 125/150
+Buddleja - TF 150/175
+Buddleja - TF 175/200
+Buddleja 'Black knight' - TF 100/125
+Buddleja 'Black knight' - TF 80/100
+Buddleja blanc - TF 125/150
+Buddleja davidii - TF 100/125
+Buddleja davidii - TF 150/175
+Buddleja davidii - TF 175/200
+Buddleja davidii 'Nanho blue' - TF 125/150
+Buddleja davidii 'Nanho blue' - TF 150/175
+Buddleja davidii 'Nanho blue' - TF 175/200
+Buddleja davidii 'Pink delight' - TF 100/125
+Buddleja davidii 'Pink delight' - TF 125/150
+Buddleja davidii 'Pink delight' - TF 80/100
+Buddleja davidii 'Royal Red' - TF 150/175
+Buddleja davidii 'Royal Red' - TF 175/200
+Buddleja davidii 'Royal Red' - TF 200/250
+Buddleja 'Summer Bird Violet' - TF 100/125
+Buddleja 'Summer Bird Violet' - TF 125/150
+Buddleja 'Summer Bird Violet' - TF 80/100
+Buddleja 'White profusion' - TF 200/250
+Callicarpa - TF 100/125
+Callicarpa - TF 125/150
+Callicarpa - TF 150/175
+Callicarpa - TF 80/100
+Callicarpa bodinieri - TF 100/125
+Callicarpa bodinieri - TF 125/150
+Callicarpa bodinieri - TF 150/175
+Callicarpa bodinieri - TF 80/100
+Carpinus betulus - TF 100/125
+Carpinus betulus - TF 125/150
+Carpinus betulus - TF 150/175
+Carpinus betulus - TF 175/200
+Carpinus betulus - TF 200/250
+Carpinus betulus - TF 250/300
+Carpinus betulus - TF 300/400
+Carpinus betulus - TF 80/100
+Cedrus - TF 100/125
+Cedrus - TF 80/100
+Cedrus deodara - TF 100/125
+Cedrus deodara - TF 125/150
+Cedrus deodara - TF 150/175
+Cedrus deodara - TF 175/200
+Cedrus deodara - TF 80/100
+Cercidiphyllum japonicum - TF 125/150
+Cercidiphyllum japonicum - TF 80/100
+Chaenomeles speciosa 'Umbilicata' - TF 125/150
+Chaenomeles speciosa 'Umbilicata' - TF 150/175
+Chaenomeles speciosa 'Umbilicata' - TF 175/200
+Chaenomeles x superba 'Cameo' - TF 100/125
+Chaenomeles x superba 'Cameo' - TF 125/150
+Clethra alnifolia 'Ruby Spice' - TF 100/125
+Clethra alnifolia 'Ruby Spice' - TF 125/150
+Clethra alnifolia 'Ruby Spice' - TF 150/175
+Cornus alba 'Gouchaultii' - TF Petit
+Cornus hongkongensis - TF 125/150
+Cornus hongkongensis - TF 80/100
+Cornus mas - TF 80/100
+Cornus sanguinea - TF 100/125
+Cornus sanguinea - TF 125/150
+Cornus sanguinea - TF 150/175
+Cornus sanguinea - TF 80/100
+Cornus sanguinea 'Midwinter Fire' - TF 100/125
+Cornus sanguinea 'Midwinter Fire' - TF 125/150
+Cornus sanguinea 'Midwinter Fire' - TF 150/175
+Cornus sericea 'Flaviramea' - TF 40/60
+Cornus sericea 'Flaviramea' - TF Gros
+Corylus avellana - TF 100/125
+Corylus avellana - TF 125/150
+Corylus avellana - TF 150/175
+Corylus avellana - TF 175/200
+Corylus avellana - TF 200/250
+Corylus avellana - TF 250/300
+Corylus avellana - TF 80/100
+Corylus avellana 'Rote Zellernuss' - TF 150/175
+Corylus avellana 'Rote Zellernuss' - TF 175/200
+Corylus maxima 'Purpurea' - TF 100/125
+Corylus maxima 'Purpurea' - TF 125/150
+Corylus maxima 'Purpurea' - TF 150/175
+Corylus maxima 'Purpurea' - TF 80/100
+Cotinus coggygria - TF 100/125
+Cotinus coggygria - TF 80/100
+Cotinus coggygria 'Purpureus' - TF 100/125
+Cotinus coggygria 'Purpureus' - TF 125/150
+Cotinus coggygria 'Purpureus' - TF 150/175
+Cotinus coggygria 'Purpureus' - TF 175/200
+Cotinus coggygria 'Purpureus' - TF 200/250
+Cotinus coggygria 'Purpureus' - TF 250/300
+Cotinus coggygria 'Purpureus' - TF 80/100
+Cotinus coggygria 'Royal Purple' - TF 150/175
+Cotinus 'Grace' - TF 100/125
+Cotinus 'Grace' - TF 125/150
+Cotoneaster franchetii - TF 100/125
+Cotoneaster franchetii - TF 125/150
+Cotoneaster franchetii - TF 150/175
+Cotoneaster franchetii - TF 175/200
+Cotoneaster franchetii - TF 80/100
+Cotoneaster lacteus - TF 100/125
+Cotoneaster lacteus - TF 125/150
+Cotoneaster lacteus - TF 150/175
+Cotoneaster lacteus - TF 80/100
+Deutzia - TF 100/125
+Deutzia - TF 125/150
+Deutzia - TF 150/175
+Deutzia - TF 175/200
+Deutzia - TF 200/250
+Deutzia - TF 80/100
+Deutzia gracilis - TF 150/175
+Deutzia 'Mont Rose' - TF 100/125
+Deutzia 'Mont Rose' - TF 125/150
+Deutzia 'Mont Rose' - TF 150/175
+Deutzia 'Mont Rose' - TF 175/200
+Deutzia 'Mont Rose' - TF 80/100
+Deutzia 'Pink Pompom' - TF 100/125
+Deutzia 'Pink Pompom' - TF 125/150
+Deutzia 'Pink Pompom' - TF 150/175
+Deutzia 'Pink Pompom' - TF 175/200
+Deutzia 'Pink Pompom' - TF 80/100
+Deutzia 'Rosea Plena' - TF 125/150
+Deutzia 'Rosea Plena' - TF 150/175
+Deutzia 'Rosea Plena' - TF 175/200
+Deutzia scabra 'Pink Pompom' - TF 100/125
+Deutzia scabra 'Pink Pompom' - TF 125/150
+Deutzia scabra 'Pink Pompom' - TF 80/100
+Deutzia x magnifica - TF 100/125
+Deutzia x magnifica - TF 125/150
+Deutzia x magnifica - TF 150/175
+Deutzia x magnifica - TF 80/100
+Elaeagnus ebbingei - TF 100/125
+Elaeagnus ebbingei - TF 125/150
+Elaeagnus ebbingei - TF 150/175
+Elaeagnus ebbingei - TF 175/200
+Elaeagnus ebbingei - TF 200/250
+Elaeagnus ebbingei - TF 80/100
+Elaeagnus ebbingei 'Viveleg' - TF 100/125
+Elaeagnus ebbingei 'Viveleg' - TF 125/150
+Elaeagnus ebbingei 'Viveleg' - TF 150/175
+Elaeagnus ebbingei 'Viveleg' - TF 175/200
+Elaeagnus ebbingei 'Viveleg' - TF 80/100
+Eucalyptus - TF 150/175
+Eucalyptus - TF 175/200
+Eucalyptus - TF 200/250
+Eucalyptus - TF 250/300
+Euonymus alatus - TF 100/125
+Euonymus alatus - TF 125/150
+Euonymus alatus - TF 150/175
+Euonymus alatus - TF 80/100
+Euonymus europaeus - TF 100/125
+Euonymus europaeus - TF 125/150
+Euonymus europaeus - TF 150/175
+Euonymus europaeus - TF 175/200
+Euonymus europaeus - TF 80/100
+Exochorda - TF 175/200
+Exochorda - TF 200/250
+Exochorda - TF 250/300
+Exochorda x macrantha - TF 100/125
+Exochorda x macrantha - TF 80/100
+Ficus carica - TF 125/150
+Forsythia - TF 100/125
+Forsythia - TF 125/150
+Forsythia - TF 150/175
+Forsythia - TF 175/200
+Forsythia - TF 200/250
+Forsythia - TF 80/100
+Forsythia suspensa - TF 150/175
+Forsythia suspensa - TF 175/200
+Forsythia suspensa - TF 200/250
+Frangula alnus - TF 100/125
+Frangula alnus - TF 80/100
+Heptacodium miconioides - TF 150/175
+Hibiscus (Fleurs blanches) - TF 175/200
+Hibiscus (Fleurs blanches) - TF 200/250
+Hibiscus (Fleurs violettes) - TF 100/125
+Hibiscus (Fleurs violettes) - TF 125/150
+Hibiscus (Fleurs violettes) - TF 150/175
+Hibiscus (Fleurs violettes) - TF 175/200
+Hibiscus (Fleurs violettes) - TF 200/250
+Hibiscus syriacus 'Blue Chiffon' - TF 100/125
+Hibiscus syriacus 'Blue Chiffon' - TF 125/150
+Hibiscus syriacus 'Blue Chiffon' - TF 150/175
+Hibiscus syriacus 'Blue Chiffon' - TF 80/100
+Hibiscus syriacus 'Pink Giant' - TF 100/125
+Hibiscus syriacus 'Pink Giant' - TF 125/150
+Hibiscus syriacus 'Pink Giant' - TF 150/175
+Hibiscus syriacus 'Pink Giant' - TF 80/100
+Hibiscus syriacus 'Russian Violet' - TF 100/125
+Hibiscus syriacus 'Russian Violet' - TF 125/150
+Hibiscus syriacus 'Russian Violet' - TF 80/100
+Hibiscus syriacus 'White Chiffon' - TF 100/125
+Hibiscus syriacus 'White Chiffon' - TF 150/175
+Hibiscus syriacus 'Woodbridge' - TF 100/125
+Hibiscus syriacus 'Woodbridge' - TF 125/150
+Hibiscus syriacus 'Woodbridge' - TF 80/100
+Hydrangea - TF 100/125
+Hydrangea - TF 125/150
+Hydrangea - TF 150/175
+Hydrangea - TF 60/80
+Hydrangea - TF 80/100
+Hydrangea paniculata 'Fraise Melba' - TF 60/80
+Hydrangea paniculata 'Fraise Melba' - TF 80/100
+Hydrangea paniculata 'Kyushu' - TF 100/125
+Hydrangea paniculata 'Kyushu' - TF 125/150
+Hydrangea paniculata 'Kyushu' - TF 150/175
+Hydrangea paniculata 'Kyushu' - TF 175/200
+Hydrangea paniculata 'Phantom' - TF 60/80
+Hydrangea paniculata 'Phantom' - TF 80/100
+Hydrangea paniculata 'Unique' - TF 125/150
+Hydrangea paniculata 'Unique' - TF 150/175
+Hydrangea quercifolia - TF 100/125
+Hydrangea quercifolia - TF 125/150
+Hydrangea quercifolia - TF 40/60
+Hydrangea quercifolia - TF 80/100
+Ilex aquifolium - TF 100/125
+Ilex aquifolium - TF 125/150
+Ilex aquifolium - TF 150/175
+Ilex aquifolium - TF 80/100
+Kolkwitzia amabilis - TF 100/125
+Kolkwitzia amabilis - TF 125/150
+Kolkwitzia amabilis - TF 150/175
+Kolkwitzia amabilis - TF 175/200
+Kolkwitzia amabilis - TF 200/250
+Kolkwitzia amabilis - TF 250/300
+Kolkwitzia amabilis - TF 300/400
+Kolkwitzia amabilis - TF 80/100
+Laburnum - TF 100/125
+Laburnum - TF 125/150
+Laburnum - TF 150/175
+Laburnum - TF 80/100
+Lagerstroemia - TF 80/100
+Lagerstroemia (Fleurs fuchsias) - TF 100/125
+Lagerstroemia (Fleurs fuchsias) - TF 80/100
+Lagerstroemia (Fleurs roses) - TF 100/125
+Lagerstroemia (Fleurs roses) - TF 80/100
+Lagerstroemia (Fleurs violettes) - TF 100/125
+Lagerstroemia (Fleurs violettes) - TF 80/100
+Ligustrum ibota 'Musli' - TF 100/125
+Ligustrum ibota 'Musli' - TF 125/150
+Ligustrum ibota 'Musli' - TF 150/175
+Ligustrum ibota 'Musli' - TF 80/100
+Ligustrum japonicum - TF 150/175
+Ligustrum japonicum - TF 80/100
+Ligustrum japonicum 'Texanum' - TF 125/150
+Ligustrum japonicum 'Texanum' - TF 80/100
+Ligustrum ovalifolium - TF 100/125
+Ligustrum ovalifolium - TF 125/150
+Ligustrum ovalifolium - TF 150/175
+Ligustrum ovalifolium - TF 175/200
+Ligustrum ovalifolium - TF 80/100
+Ligustrum ovalifolium 'Aureum' - TF 100/125
+Ligustrum ovalifolium 'Aureum' - TF 125/150
+Ligustrum ovalifolium 'Aureum' - TF 150/175
+Ligustrum ovalifolium 'Aureum' - TF 80/100
+Ligustrum sinense - TF 100/125
+Ligustrum sinense - TF 125/150
+Ligustrum sinense - TF 150/175
+Ligustrum sinense - TF 175/200
+Lonicera fragrantissima - TF 100/125
+Lonicera fragrantissima - TF 125/150
+Lonicera fragrantissima - TF 150/175
+Lonicera fragrantissima - TF 175/200
+Lonicera fragrantissima - TF 200/250
+Lonicera fragrantissima - TF 80/100
+Lonicera tatarica 'Hack's Red' - TF 150/175
+Lonicera tatarica 'Hack's Red' - TF 175/200
+Lonicera tatarica 'Hack's Red' - TF 200/250
+Magnolia liliiflora 'Nigra' - TF 100/125
+Magnolia Susan - TF 100/125
+Magnolia Susan - TF 80/100
+Mahonia repens - TF 100/125
+Mahonia repens - TF 125/150
+Mahonia repens - TF 80/100
+Mahonia x media 'Charity' - TF 100/125
+Mahonia x media 'Charity' - TF 125/150
+Mahonia x media 'Charity' - TF 150/175
+Nandina domestica - TF 100/125
+Nandina domestica - TF 125/150
+Nandina domestica - TF 80/100
+Nandina domestica 'Obsessed' - TF Gros
+Nandina 'Firepower' - TF 80/100
+Nandina 'Firepower' - TF Gros
+Nandina 'Firepower' - TF Petit
+Nerium oleander - TF 100/125
+Nerium oleander - TF 125/150
+Osmanthus heterophyllus - TF 100/125
+Osmanthus heterophyllus - TF 125/150
+Osmanthus heterophyllus - TF 150/175
+Osmanthus heterophyllus - TF 175/200
+Osmanthus heterophyllus - TF 80/100
+Osmanthus heterophyllus 'Goshiki' - TF 40/60
+Osmanthus x burkwoodii - TF 100/125
+Osmanthus x burkwoodii - TF 125/150
+Osmanthus x burkwoodii - TF 150/175
+Osmanthus x burkwoodii - TF 80/100
+Parrotia persica - TF 100/125
+Philadelphus - TF 100/125
+Philadelphus - TF 150/175
+Philadelphus - TF 175/200
+Philadelphus - TF 200/250
+Philadelphus - TF 80/100
+Philadelphus 'Belle Etoile' - TF 80/100
+Philadelphus 'Bouquet Blanc' - TF 100/125
+Philadelphus 'Bouquet Blanc' - TF 80/100
+Philadelphus coronarius - TF 100/125
+Philadelphus coronarius - TF 125/150
+Philadelphus coronarius - TF 150/175
+Philadelphus coronarius - TF 175/200
+Philadelphus coronarius - TF 80/100
+Philadelphus 'Manteau d'Hermine' - TF 100/125
+Philadelphus 'Manteau d'Hermine' - TF 80/100
+Philadelphus 'Silver Showers' - TF 100/125
+Philadelphus 'Silver Showers' - TF 80/100
+Philadelphus x virginalis - TF 100/125
+Philadelphus x virginalis - TF 125/150
+Philadelphus x virginalis - TF 150/175
+Philadelphus x virginalis - TF 80/100
+Phillyrea angustifolia - TF 100/125
+Phillyrea angustifolia - TF 125/150
+Phillyrea angustifolia - TF 150/175
+Phillyrea angustifolia - TF 80/100
+Photinia x fraseri 'Carré Rouge' - TF 125/150
+Photinia x fraseri 'Carré Rouge' - TF 150/175
+Photinia x fraseri 'Red Robin' - TF 100/125
+Photinia x fraseri 'Red Robin' - TF 125/150
+Photinia x fraseri 'Red Robin' - TF 14/16
+Photinia x fraseri 'Red Robin' - TF 150/175
+Photinia x fraseri 'Red Robin' - TF 175/200
+Photinia x fraseri 'Red Robin' - TF 80/100
+Physocarpus opulifolius 'Dart's Gold' - TF 100/125
+Physocarpus opulifolius 'Dart's Gold' - TF 125/150
+Physocarpus opulifolius 'Dart's Gold' - TF 150/175
+Physocarpus opulifolius 'Dart's Gold' - TF 80/100
+Physocarpus opulifolius 'Diable d'Or' - TF 100/125
+Physocarpus opulifolius 'Diable d'Or' - TF 80/100
+Physocarpus opulifolius 'Diabolo' - TF 100/125
+Physocarpus opulifolius 'Diabolo' - TF 125/150
+Physocarpus opulifolius 'Diabolo' - TF 150/175
+Physocarpus opulifolius 'Diabolo' - TF 80/100
+Physocarpus opulifolius 'Midnight' - TF 80/100
+Pinus - TF 125/150
+Pinus - TF 150/175
+Pinus - TF 175/200
+Pinus - TF 200/250
+Pinus mugo - TF 100/125
+Pinus mugo - TF 125/150
+Pinus mugo - TF 150/175
+Pinus mugo - TF 80/100
+Pinus nigra 'Nana' - TF 100/125
+Pinus nigra 'Nana' - TF 125/150
+Pinus nigra 'Nana' - TF 80/100
+Pinus parviflora 'Negishi' - TF 100/125
+Pinus parviflora 'Negishi' - TF 125/150
+Pinus parviflora 'Negishi' - TF 80/100
+Prunus caucasica - TF 100/125
+Prunus caucasica - TF 125/150
+Prunus caucasica - TF 150/175
+Prunus caucasica - TF 175/200
+Prunus caucasica - TF 80/100
+Prunus genolia - TF 100/125
+Prunus genolia - TF 125/150
+Prunus genolia - TF 150/175
+Prunus genolia - TF 80/100
+Prunus 'Green Torch' - TF 100/125
+Prunus 'Green Torch' - TF 125/150
+Prunus 'Green Torch' - TF 150/175
+Prunus 'Green Torch' - TF 80/100
+Prunus incisa 'Kojo-no-mai' - TF 100/125
+Prunus incisa 'Kojo-no-mai' - TF 125/150
+Prunus laurocerasus - TF 125/150
+Prunus lusitanica - TF 100/125
+Prunus lusitanica - TF 125/150
+Prunus lusitanica - TF 150/175
+Prunus lusitanica - TF 175/200
+Prunus lusitanica - TF 200/250
+Prunus lusitanica - TF 80/100
+Prunus lusitanica 'Variegata' - TF 100/125
+Prunus lusitanica 'Variegata' - TF 80/100
+Prunus mahaleb - TF 100/125
+Prunus mahaleb - TF 125/150
+Prunus mahaleb - TF 175/200
+Prunus mahaleb - TF 200/250
+Prunus mahaleb - TF 250/300
+Prunus mahaleb - TF 80/100
+Prunus padus - TF 100/125
+Prunus padus - TF 125/150
+Prunus padus - TF 150/175
+Prunus padus - TF 80/100
+Punica - TF 80/100
+Pyracantha - TF 125/150
+Pyracantha - TF 150/175
+Pyrus - TF 100/125
+Pyrus - TF 125/150
+Pyrus - TF 150/175
+Pyrus - TF 175/200
+Pyrus - TF 80/100
+Quercus bicolor - TF 80/100
+Quercus ilex - TF 100/125
+Quercus robur - TF 80/100
+Rhamnus - TF 100/125
+Rhamnus - TF 125/150
+Rhamnus - TF 150/175
+Rhamnus - TF 80/100
+Ribes sanguineum 'King Edward' - TF 100/125
+Ribes sanguineum 'King Edward' - TF 125/150
+Salix - TF 300/400
+Salix - TF 400/500
+Salix integra 'Hakuro-nishiki' - TF 100/125
+Salix integra 'Hakuro-nishiki' - TF 125/150
+Salix integra 'Hakuro-nishiki' - TF 150/175
+Salix integra 'Hakuro-nishiki' - TF 175/200
+Salix purpurea 'Nana' - TF 100/125
+Salix purpurea 'Nana' - TF 125/150
+Salix purpurea 'Nana' - TF 150/175
+Salix purpurea 'Nana' - TF 80/100
+Sambucus nigra - TF 125/150
+Sambucus nigra - TF 150/175
+Sambucus nigra - TF 175/200
+Sambucus nigra 'Aureomarginata' - TF 125/150
+Sambucus nigra 'Aureomarginata' - TF 150/175
+Sambucus nigra 'Aureomarginata' - TF 175/200
+Sambucus nigra 'Aureomarginata' - TF 200/250
+Sambucus nigra 'Aureomarginata' - TF 250/300
+Sorbaria sorbifolia - TF 100/125
+Sorbaria sorbifolia - TF 80/100
+Sorbus aucuparia - TF 6/8
+Sorbus aucuparia - TF 8/10
+Spartium - TF 150/175
+Spartium - TF 175/200
+Spiraea arguta - TF 100/125
+Spiraea arguta - TF 125/150
+Spiraea arguta - TF 150/175
+Spiraea arguta - TF 80/100
+Spiraea billardi - TF 125/150
+Spiraea billardi - TF 150/175
+Spiraea billardi - TF 175/200
+Spiraea billardi - TF 200/250
+Spiraea prunifolia - TF 100/125
+Spiraea prunifolia - TF 80/100
+Spiraea Shirobana - TF 80/100
+Spiraea Snowmound - TF 100/125
+Spiraea Snowmound - TF 125/150
+Spiraea Snowmound - TF 80/100
+Spiraea Snowmound - TF 150/175
+Spiraea Snowmound - TF 175/200
+Spiraea thunbergii - TF 100/125
+Spiraea thunbergii - TF 125/150
+Spiraea thunbergii - TF 150/175
+Spiraea thunbergii - TF 80/100
+Spiraea vanhouttei - TF 100/125
+Spiraea vanhouttei - TF 125/150
+Spiraea vanhouttei - TF 150/175
+Spiraea vanhouttei - TF 80/100
+Syringa - TF 100/125
+Syringa - TF 125/150
+Syringa - TF 150/175
+Syringa - TF 175/200
+Syringa - TF 200/250
+Syringa - TF 80/100
+Syringa 'Belle de Moscou' - TF 125/150
+Syringa blanc - TF 100/125
+Syringa blanc - TF 125/150
+Syringa blanc - TF 150/175
+Syringa 'Charles Joly' - TF 60/80
+Syringa 'Dentelle d'Anjou' - TF 80/100
+Syringa 'Katherine Havemeyer' - TF 80/100
+Syringa microphylla 'Superba' - TF 100/125
+Syringa microphylla 'Superba' - TF 125/150
+Syringa 'Prince Wolkonsky' - TF 60/80
+Syringa 'Prince Wolkonsky' - TF 80/100
+Syringa 'Souvenir de Louis Spaethe' - TF 100/125
+Syringa 'Souvenir de Louis Spaethe' - TF 125/150
+Syringa 'Souvenir de Louis Spaethe' - TF 60/80
+Syringa 'Souvenir de Louis Spaethe' - TF 80/100
+Syringa 'Zhemchuzhina' - TF 100/125
+Syringa 'Zhemchuzhina' - TF 125/150
+Tamarix - TF 80/100
+Tamarix tetrandra - TF 80/100
+Taxus baccata - TF 100/125
+Taxus baccata - TF 125/150
+Taxus baccata - TF 150/175
+Taxus baccata - TF 175/200
+Taxus baccata - TF 200/250
+Taxus baccata - TF 250/300
+Taxus baccata - TF 300/400
+Taxus baccata - TF 80/100
+Tetradium daniellii - TF 125/150
+Tetradium daniellii - TF 150/175
+Thuja excelsa - TF 125/150
+Thuja excelsa - TF 150/175
+Thuja excelsa - TF 175/200
+Thuja excelsa - TF 200/250
+Thuja excelsa - TF 250/300
+Thuja excelsa - TF 300/400
+Thuja orientalis 'Aurea' - TF 80/100
+Viburnum carlcephalum - TF 100/125
+Viburnum carlcephalum - TF 80/100
+Viburnum carlesii - TF 200/250
+Viburnum lantana - TF 100/125
+Viburnum lantana - TF 125/150
+Viburnum lantana - TF 150/175
+Viburnum lantana - TF 175/200
+Viburnum lantana - TF 200/250
+Viburnum lantana - TF 250/300
+Viburnum lantana - TF 80/100
+Viburnum opulus - TF 100/125
+Viburnum opulus - TF 125/150
+Viburnum opulus - TF 150/175
+Viburnum opulus - TF 175/200
+Viburnum opulus - TF 80/100
+Viburnum opulus 'Roseum' - TF 100/125
+Viburnum opulus 'Roseum' - TF 125/150
+Viburnum opulus 'Roseum' - TF 150/175
+Viburnum opulus 'Roseum' - TF 175/200
+Viburnum opulus 'Roseum' - TF 200/250
+Viburnum opulus 'Roseum' - TF 80/100
+Viburnum plicatum - TF 100/125
+Viburnum plicatum - TF 125/150
+Viburnum plicatum - TF 150/175
+Viburnum plicatum - TF 175/200
+Viburnum plicatum - TF 80/100
+Viburnum plicatum 'Lanarth' - TF 100/125
+Viburnum plicatum 'Lanarth' - TF 125/150
+Viburnum plicatum 'Lanarth' - TF 150/175
+Viburnum plicatum 'Lanarth' - TF 175/200
+Viburnum plicatum 'Lanarth' - TF 200/250
+Viburnum plicatum 'Lanarth' - TF 80/100
+Viburnum plicatum 'Mariesii' - TF 125/150
+Viburnum plicatum 'Mariesii' - TF 150/175
+Viburnum plicatum 'Mariesii' - TF 175/200
+Viburnum rhytidophyllum - TF 100/125
+Viburnum rhytidophyllum - TF 125/150
+Viburnum rhytidophyllum - TF 150/175
+Viburnum rhytidophyllum - TF 175/200
+Viburnum rhytidophyllum - TF 200/250
+Viburnum rhytidophyllum - TF 80/100
+Viburnum tinus - TF 100/125
+Viburnum tinus - TF 125/150
+Viburnum tinus - TF 150/175
+Viburnum tinus - TF 175/200
+Viburnum tinus - TF 80/100
+Viburnum tinus 'Eve Price' - TF 100/125
+Viburnum tinus 'Eve Price' - TF 80/100
+Viburnum utile - TF 175/200
+Viburnum utile - TF 200/250
+Viburnum x bodnantense - TF 100/125
+Viburnum x bodnantense - TF 125/150
+Viburnum x bodnantense - TF 150/175
+Viburnum x bodnantense - TF 175/200
+Viburnum x bodnantense - TF 200/250
+Viburnum x bodnantense - TF 80/100
+Viburnum x bodnantense 'Dawn' - TF 80/100
+Viburnum x burkwoodii - TF 100/125
+Viburnum x burkwoodii - TF 125/150
+Viburnum x burkwoodii - TF 150/175
+Viburnum x burkwoodii - TF 175/200
+Viburnum x burkwoodii - TF 200/250
+Viburnum x burkwoodii - TF 80/100
+Viburnum x pragense - TF 150/175
+Viburnum x pragense - TF 175/200
+Viburnum x pragense - TF 200/250
+Vitex agnus-castus - TF 100/125
+Vitex agnus-castus - TF 125/150
+Vitex agnus-castus - TF 150/175
+Vitex agnus-castus - TF 80/100
+Weigela - TF 100/125
+Weigela - TF 125/150
+Weigela - TF 150/175
+Weigela - TF 175/200
+Weigela - TF 200/250
+Weigela - TF 80/100
+Weigela (Fleurs rouges) - TF 100/125
+Weigela (Fleurs rouges) - TF 125/150
+Weigela (Fleurs rouges) - TF 150/175
+Weigela 'Bristol ruby' - TF 100/125
+Weigela 'Bristol ruby' - TF 125/150
+Weigela 'Bristol ruby' - TF 150/175
+Weigela 'Bristol ruby' - TF 80/100
+Weigela florida 'Nana variegata' - TF 100/125
+Weigela florida 'Nana variegata' - TF 125/150
+Weigela florida 'Nana variegata' - TF 175/200
+Weigela florida 'Nana variegata' - TF 80/100
+Weigela 'Florida Variegata' - TF 100/125
+Weigela 'Florida Variegata' - TF 125/150
+Weigela 'Florida Variegata' - TF 175/200
+Weigela 'Florida Variegata' - TF 200/250
+Weigela 'Florida Variegata' - TF 80/100
+Weigela 'Kosteriana variegata' - TF 80/100
+Weigela 'Red prince' - TF 100/125
+Weigela 'Red prince' - TF 125/150
+Weigela 'Red prince' - TF 150/175
+Weigela 'Red prince' - TF 175/200
+Weigela 'Red prince' - TF 80/100
+Weigela 'Stelzneri' - TF 100/125
+Weigela 'Stelzneri' - TF 125/150
+Weigela 'Stelzneri' - TF 150/175
+Weigela 'Stelzneri' - TF 175/200
+Weigela 'Stelzneri' - TF 200/250
+Weigela 'Stelzneri' - TF 80/100
+x Cupressocyparis leylandii - TF 100/125
+x Cupressocyparis leylandii - TF 125/150
+x Cupressocyparis leylandii - TF 150/175
+x Cupressocyparis leylandii - TF 175/200
+x Cupressocyparis leylandii - TF 200/250
+x Cupressocyparis leylandii - TF 250/300
+x Cupressocyparis leylandii - TF 300/400
+x Cupressocyparis leylandii - TF 400/500
+x Cupressocyparis leylandii - TF 80/100
+Zanthoxylum piperitum - TF 100/125
+Zanthoxylum piperitum - TF 80/100
