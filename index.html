@@ -88,6 +88,8 @@ li.ordli small{color:var(--soft);font-weight:500}
 .menu .del{color:var(--danger)}
 .size{display:inline-block;margin:0 0 0 6px;padding:0 8px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--ink);background:var(--bg);vertical-align:1px}
 #size{width:96px;flex:none;text-align:center;padding:14px 8px}
+.size.forme{background:var(--head);font-weight:600}
+#form{width:104px;flex:none;padding:14px 6px}
 .empty{text-align:center;color:var(--soft);padding:6px 0 10px;font-size:14px}
 .tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
 .tools .danger{margin-left:auto}
@@ -100,6 +102,7 @@ li.ordli small{color:var(--soft);font-weight:500}
   <p class="count" id="count"></p>
   <div class="add" id="addbox">
     <input type="text" id="new" placeholder="Variété (ex : Tilleul argenté)" autocomplete="off">
+    <select id="form" aria-label="Forme"></select>
     <input type="text" id="size" placeholder="Taille (8/10)" autocomplete="off" autocapitalize="off" aria-label="Taille">
     <input type="number" id="qty" value="1" min="1" inputmode="numeric" aria-label="Quantité">
     <select id="sec" aria-label="Section"></select>
@@ -134,6 +137,8 @@ const TABS=[
  {n:'Au dépôt',t:'Au dépôt',v:'ramené',vi:'ramener',act:'ramené au dépôt'},
  {n:'Dispatch',t:'Dispatch',v:'dispatché',vi:'dispatcher',act:'dispatché'}];
 const PL=['Normale','Haute','Urgente'];
+const FORMES=['TF','Branchu','CP','Tige','1/2 Tige','Autre'];
+const formOpts=cur=>'<option value="">—</option>'+FORMES.map(f=>`<option value="${f}" ${f===cur?'selected':''}>${f}</option>`).join('');
 let UI=Object.assign({hist:0,tab:0,hide:[false,false,false],col:{}},ld(UIKEY,{}));
 let CFG=Object.assign({repo:'',token:'',dev:''},ld(CFGKEY,{}));
 if(!CFG.dev){CFG.dev='tel-'+Math.random().toString(36).slice(2,6);sv(CFGKEY,CFG)}
@@ -164,7 +169,7 @@ const items=()=>S.items.filter(live);
 function reduce(o){
   const a=o.a,iso=new Date(o.t).toISOString();
   const item=id=>S.items.find(i=>i.id===id);
-  const L=(act,it,qty)=>S.log.push({t:iso,dev:o.dev||'',iid:it?it.id:'',action:act,section:it?sec(it.sectionId).name||'':'',item:it?it.name:'',size:it?it.size||'':'',qty});
+  const L=(act,it,qty)=>S.log.push({t:iso,dev:o.dev||'',iid:it?it.id:'',action:act,section:it?sec(it.sectionId).name||'':'',item:it?it.name:'',size:it?it.size||'':'',form:it?it.form||'':'',qty});
   const LS=(act,s)=>S.log.push({t:iso,dev:o.dev||'',action:act,section:s.name,item:'',qty:''});
   let x,s;
   switch(o.ty){
@@ -176,9 +181,10 @@ function reduce(o){
   case 'secdel':if(s=sec(a.sid),s.id){S.items.filter(i=>i.sectionId===s.id).forEach(i=>L('supprimé',i,i.qty));
     S.items=S.items.filter(i=>i.sectionId!==s.id);S.sections=S.sections.filter(z=>z!==s);LS('section supprimée',s)}break;
   case 'secswap':{const A=S.sections,i=A.findIndex(z=>z.id===a.x),j=A.findIndex(z=>z.id===a.y);if(i>=0&&j>=0)[A[i],A[j]]=[A[j],A[i]]}break;
-  case 'add':if(!item(a.iid)&&sec(a.sid).id){x={id:a.iid,name:a.name,size:a.size||'',qty:a.qty,sectionId:a.sid,start:a.start||0,st:[[],[],[]]};S.items.push(x);L('ajout'+(x.start?' ('+TABS[x.start].n.toLowerCase()+')':''),x,a.qty)}break;
+  case 'add':if(!item(a.iid)&&sec(a.sid).id){x={id:a.iid,name:a.name,size:a.size||'',form:a.form||'',qty:a.qty,sectionId:a.sid,start:a.start||0,st:[[],[],[]]};S.items.push(x);L('ajout'+(x.start?' ('+TABS[x.start].n.toLowerCase()+')':''),x,a.qty)}break;
   case 'del':if(x=item(a.iid)){L('supprimé',x,x.qty);S.items=S.items.filter(z=>z!==x)}break;
   case 'edit':if(x=item(a.iid)){x.name=a.name;x.size=a.size||'';L('variété/taille modifiée',x,x.qty)}break;
+  case 'form':if(x=item(a.iid)){x.form=a.form||'';L('forme modifiée',x,x.qty)}break;
   case 'qty':if((x=item(a.iid))&&a.qty>=x.st[x.start||0].length){x.qty=a.qty;if(!(got(x,2)>=x.qty))delete x.arch;L('quantité modifiée',x,a.qty)}break;
   case 'move':if((x=item(a.iid))&&sec(a.sid).id){x.sectionId=a.sid;L('déplacé',x,x.qty)}break;
   case 'prio':if(x=item(a.iid)){x.prio=a.p;L('priorité → '+PL[a.p],x,x.qty)}break;
@@ -265,7 +271,7 @@ function itemHTML(i){
   const own=i.prio||0,sp=sec(i.sectionId).prio||0,ef=Math.max(own,sp),pc=(!fn&&ef)?'p'+ef:'';
   if(ordering){
     const sib=view(sec(i.sectionId),true),k=sib.indexOf(i);
-    return `<li class="ordli ${pc}"><span class="name">${esc(i.name)}${i.size?` <small>${esc(i.size)}</small>`:''} <small>× ${i.qty}${fn?' · terminé':''}</small></span><div class="ord">
+    return `<li class="ordli ${pc}"><span class="name">${esc(i.name)}${i.form?` <small>${esc(i.form)}</small>`:''}${i.size?` <small>${esc(i.size)}</small>`:''} <small>× ${i.qty}${fn?' · terminé':''}</small></span><div class="ord">
       <button class="ghost" data-itup="${i.id}" ${(k===0||fini(sib[k-1],T)!==fn)?'disabled':''} aria-label="Monter">▲</button>
       <button class="ghost" data-itdown="${i.id}" ${(k===sib.length-1||fini(sib[k+1],T)!==fn)?'disabled':''} aria-label="Descendre">▼</button></div></li>`;
   }
@@ -273,14 +279,15 @@ function itemHTML(i){
   const lock=T<2&&got(i,T+1)>=n,open=menuId===i.id;
   return `<li class="${fn?'done':pc}"><div class="top">
     <button class="check" data-ok="${i.id}" ${fn?'disabled':''} aria-label="Valider un arbre">${fn?'✓':av}</button>
-    <div class="info"><span class="name">${esc(i.name)}</span>${i.size?`<span class="size">${esc(i.size)}</span>`:''}${pc?`<span class="pill ${pc}">${PL[ef]}</span>`:''}
+    <div class="info"><span class="name">${esc(i.name)}</span>${i.form?`<span class="size forme">${esc(i.form)}</span>`:''}${i.size?`<span class="size">${esc(i.size)}</span>`:''}${pc?`<span class="pill ${pc}">${PL[ef]}</span>`:''}
     <span class="sub"><b>${n}</b>/${i.qty} ${V.v}${n>1?'s':''}${fn?(n<i.qty?' · en attente':''):' · reste '+av}${last?' · '+fmt(last):''}${i.arch?' · 📦':''}</span>
     ${i.note?`<span class="sub cm">💬 ${esc(i.note)}</span>`:''}</div>
     <button class="ghost opt" data-menu="${i.id}" aria-expanded="${open}" aria-label="Options de la ligne">${open?'✕':'⋯'}</button></div>
     ${open?`<div class="menu"><button class="ghost" data-undo="${i.id}" ${(n&&!lock)?'':'disabled'}>Annuler le dernier</button>
     <button class="ghost pbtn p${own}" data-prio="${i.id}">Priorité : ${PL[own].toLowerCase()}</button>
     <button class="ghost" data-note="${i.id}">${i.note?'Modifier le commentaire':'Commentaire'}</button>
-    ${T===(i.start||0)?`<button class="ghost" data-edit="${i.id}">Variété / taille</button>
+    ${T===(i.start||0)?`<label>Forme<select data-form="${i.id}" aria-label="Forme">${formOpts(i.form)}</select></label>
+    <button class="ghost" data-edit="${i.id}">Variété / taille</button>
     <button class="ghost" data-qty="${i.id}">Quantité</button>
     <label>Section<select data-move="${i.id}" aria-label="Changer de section">${opts}</select></label>
     <button class="ghost del" data-del="${i.id}">Supprimer</button>`:''}</div>`:''}</li>`;
@@ -333,8 +340,8 @@ function render(){
 function add(){
   const v=$('new').value.trim();if(!v)return;
   cur=$('sec').value;UI.col[cur]=false;saveUI();
-  op('add',{iid:uid(),name:v,size:$('size').value.trim(),qty:Math.max(1,parseInt($('qty').value)||1),sid:cur,start:T});
-  $('new').value='';$('size').value='';$('qty').value=1;
+  op('add',{iid:uid(),name:v,size:$('size').value.trim(),form:$('form').value,qty:Math.max(1,parseInt($('qty').value)||1),sid:cur,start:T});
+  $('new').value='';$('size').value='';$('form').value='';$('qty').value=1;
 }
 $('addBtn').onclick=add;
 ['new','size','qty'].forEach(k=>$(k).addEventListener('keydown',e=>{if(e.key==='Enter')add()}));
@@ -357,6 +364,7 @@ $('toast').onclick=e=>{
 $('list').addEventListener('change',e=>{
   const d=e.target.dataset;
   if(d.move)op('move',{iid:d.move,sid:e.target.value});
+  else if(d.form)op('form',{iid:d.form,form:e.target.value});
   else if(d.sdate)op('sdate',{sid:d.sdate,date:e.target.value});
   else if(d.sweek){
     const v=e.target.value.trim();
@@ -417,9 +425,9 @@ $('list').addEventListener('click',e=>{
 });
 function csvText(rows){
   const q=s=>'"'+String(s).replace(/"/g,'""')+'"';
-  return '\ufeff'+['horodatage;date;heure;action;section;variété;taille;quantité;appareil'].concat(rows.map(l=>{
+  return '\ufeff'+['horodatage;date;heure;action;section;variété;taille;forme;quantité;appareil'].concat(rows.map(l=>{
     const d=new Date(l.t);
-    return [l.t,d.toLocaleDateString('fr-FR'),d.toLocaleTimeString('fr-FR'),l.action,q(l.section||''),q(l.item),q(l.size||''),l.qty===undefined?1:l.qty,l.dev||''].join(';');
+    return [l.t,d.toLocaleDateString('fr-FR'),d.toLocaleTimeString('fr-FR'),l.action,q(l.section||''),q(l.item),q(l.size||''),q(l.form||''),l.qty===undefined?1:l.qty,l.dev||''].join(';');
   })).join('\n');
 }
 $('exportBtn').onclick=()=>{
@@ -464,6 +472,8 @@ $('cfgFile').onchange=async e=>{
   }catch(err){alert('Fichier de configuration invalide.')}
 };
 $('cfgRepo').value=CFG.repo;$('cfgToken').value=CFG.token;$('cfgDev').value=CFG.dev;
+
+$('form').innerHTML='<option value="">Forme</option>'+FORMES.map(f=>`<option>${f}</option>`).join('');
 
 // ---- Démarrage
 rebuild();
