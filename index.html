@@ -76,6 +76,12 @@ li.ordli small{color:var(--soft);font-weight:500}
 .sync textarea{width:100%;padding:10px;font:inherit;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
 .modebar .ghost.syncbtn{background:#1f5f99;color:#fff;border-color:#1f5f99}
 @media (prefers-color-scheme:dark){.modebar .ghost.syncbtn{background:#6aa9e0;color:#10202e;border-color:#6aa9e0}}
+.opt{width:44px;height:44px;flex:none;padding:0!important;font-size:22px!important;align-self:flex-start}
+.menu{display:flex;flex-direction:column;gap:6px;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.menu .ghost{text-align:left;padding:12px 14px;font-size:16px}
+.menu label{display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--soft);font-size:15px;padding:0 4px}
+.menu select{border-width:1px;padding:10px;flex:1;max-width:65%;color:var(--ink)}
+.menu .del{color:var(--danger)}
 .empty{text-align:center;color:var(--soft);padding:12px 0 18px;font-size:15px}
 .tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
 .tools .danger{margin-left:auto}
@@ -126,7 +132,7 @@ const PL=['Normale','Haute','Urgente'];
 let UI=Object.assign({hist:0,tab:0,hide:[false,false,false],col:{}},ld(UIKEY,{}));
 let CFG=Object.assign({repo:'',token:'',dev:''},ld(CFGKEY,{}));
 if(!CFG.dev){CFG.dev='tel-'+Math.random().toString(36).slice(2,6);sv(CFGKEY,CFG)}
-let OPS=ld(OPSKEY,[]),S={sections:[],items:[],log:[]},T=UI.tab,cur='gen',ordering=false,toastId=null,toastTimer=null,lastT=0,SN=[],lastSug=null;
+let OPS=ld(OPSKEY,[]),S={sections:[],items:[],log:[]},T=UI.tab,cur='gen',ordering=false,toastId=null,toastTimer=null,lastT=0,SN=[],lastSug=null,menuId=null;
 OPS.forEach(o=>{if(o.dev===CFG.dev)lastT=Math.max(lastT,o.t)});
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmt=iso=>{const d=new Date(iso);return d.toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'2-digit'})+' à '+d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})};
@@ -174,7 +180,7 @@ function rebuild(){
   if(!sec(cur).id)cur=S.sections[0]?S.sections[0].id:'gen';
 }
 function op(ty,a){
-  lastT=Math.max(Date.now(),lastT+1);
+  lastT=Math.max(Date.now(),lastT+1);menuId=null;
   OPS.push({id:uid(),t:lastT,dev:CFG.dev,ty,a});sv(OPSKEY,OPS);rebuild();render();schedSync();
 }
 const saveUI=()=>{UI.tab=T;sv(UIKEY,UI)};
@@ -248,7 +254,7 @@ function itemHTML(i){
       <button class="ghost" data-itdown="${i.id}" ${(k===sib.length-1||fini(sib[k+1],T)!==fn)?'disabled':''} aria-label="Descendre">▼</button></div></li>`;
   }
   const opts=S.sections.map(s=>`<option value="${s.id}" ${s.id===i.sectionId?'selected':''}>${esc(s.name)}</option>`).join('');
-  const lock=T<2&&got(i,T+1)>=n;
+  const lock=T<2&&got(i,T+1)>=n,open=menuId===i.id;
   return `<li class="${fn?'done':pc}"><div class="top">
     <button class="check" data-ok="${i.id}" ${fn?'disabled':''} aria-label="Valider un arbre">${fn?'✓':av}</button>
     <div class="info"><span class="name">${esc(i.name)}</span>
@@ -256,13 +262,14 @@ function itemHTML(i){
     <span class="sub"><b>${n}</b> sur ${i.qty} ${V.v}${n>1?'s':''}${fn?(n<i.qty?' · en attente':''):' · '+av+' à '+V.vi}</span>
     ${pc?`<span class="sub pr ${pc}"><b>Priorité ${PL[ef].toLowerCase()}</b>${sp>own?' (section)':''}</span>`:''}
     ${last?`<span class="sub">Dernier : ${fmt(last)}</span>`:''}
-    ${i.arch?`<span class="sub">📦 Archivé le ${fmt(i.arch)}</span>`:''}</div></div>
-    <div class="acts"><button class="ghost" data-undo="${i.id}" ${(n&&!lock)?'':'disabled'}>Annuler le dernier</button>
+    ${i.arch?`<span class="sub">📦 Archivé le ${fmt(i.arch)}</span>`:''}</div>
+    <button class="ghost opt" data-menu="${i.id}" aria-expanded="${open}" aria-label="Options de la ligne">${open?'✕':'⋯'}</button></div>
+    ${open?`<div class="menu"><button class="ghost" data-undo="${i.id}" ${(n&&!lock)?'':'disabled'}>Annuler le dernier</button>
     <button class="ghost pbtn p${own}" data-prio="${i.id}">Priorité : ${PL[own].toLowerCase()}</button>
     <button class="ghost" data-note="${i.id}">${i.note?'Modifier le commentaire':'Commentaire'}</button>
     ${T===(i.start||0)?`<button class="ghost" data-qty="${i.id}">Quantité</button>
-    <select data-move="${i.id}" aria-label="Changer de section">${opts}</select>
-    <button class="ghost del" data-del="${i.id}">Supprimer</button>`:''}</div></li>`;
+    <label>Section<select data-move="${i.id}" aria-label="Changer de section">${opts}</select></label>
+    <button class="ghost del" data-del="${i.id}">Supprimer</button>`:''}</div>`:''}</li>`;
 }
 function render(){
   const V=TABS[T];
@@ -312,7 +319,7 @@ function add(){
 $('addBtn').onclick=add;
 $('new').addEventListener('keydown',e=>{if(e.key==='Enter')add()});
 $('sec').onchange=e=>{cur=e.target.value};
-$('tabs').onclick=e=>{const b=e.target.closest('button');if(!b)return;T=+b.dataset.tab;ordering=false;$('toast').hidden=true;saveUI();render()};
+$('tabs').onclick=e=>{const b=e.target.closest('button');if(!b)return;T=+b.dataset.tab;ordering=false;menuId=null;$('toast').hidden=true;saveUI();render()};
 $('ordBtn').onclick=()=>{ordering=!ordering;render()};
 $('hideBtn').onclick=()=>{UI.hide[T]=!UI.hide[T];$('toast').hidden=true;saveUI();render()};
 $('secBtn').onclick=()=>{
@@ -333,7 +340,8 @@ $('list').addEventListener('change',e=>{
 $('list').addEventListener('click',e=>{
   const b=e.target.closest('button');if(!b||b.disabled)return;
   const item=id=>S.items.find(i=>i.id===id),d=b.dataset;
-  if(d.toggle){UI.col[d.toggle]=!UI.col[d.toggle];saveUI();render()}
+  if(d.menu){menuId=menuId===d.menu?null:d.menu;render()}
+  else if(d.toggle){UI.col[d.toggle]=!UI.col[d.toggle];saveUI();render()}
   else if(d.rename){const s=sec(d.rename),n=(prompt('Nouveau nom de la section',s.name)||'').trim();if(n)op('secren',{sid:s.id,name:n})}
   else if(d.delsec){
     const s=sec(d.delsec);
