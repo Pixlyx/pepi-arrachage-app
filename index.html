@@ -69,10 +69,6 @@ li.ordli small{color:var(--soft);font-weight:500}
 .note{background:var(--card);border-left:4px solid var(--soft);border-radius:8px;padding:8px 12px;margin:0 0 8px;font-size:15px;word-break:break-word}
 .sub.cm{color:var(--ink);font-style:italic;word-break:break-word}
 .sync{margin-top:20px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px}.sync summary{font-weight:600;cursor:pointer}.sync summary span{font-weight:500;font-size:13px;color:var(--soft);margin-left:6px}.sync label{display:block;font-size:14px;color:var(--soft);margin-top:10px}.sync input{width:100%;padding:10px}.sync .row{display:flex;gap:8px;margin-top:12px}
-.sugg{flex:1 1 100%;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
-.sugg[hidden]{display:none}
-.sugg button{display:block;width:100%;text-align:left;background:none;color:var(--ink);border-radius:0;border-bottom:1px solid var(--line);padding:12px 14px;font-weight:500}
-.sugg button:last-child{border:0}
 .sync textarea{width:100%;padding:10px;font:inherit;border:2px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink)}
 .modebar .ghost.syncbtn{background:#1f5f99;color:#fff;border-color:#1f5f99}
 @media (prefers-color-scheme:dark){.modebar .ghost.syncbtn{background:#6aa9e0;color:#10202e;border-color:#6aa9e0}}
@@ -82,6 +78,8 @@ li.ordli small{color:var(--soft);font-weight:500}
 .menu label{display:flex;align-items:center;justify-content:space-between;gap:10px;color:var(--soft);font-size:15px;padding:0 4px}
 .menu select{border-width:1px;padding:10px;flex:1;max-width:65%;color:var(--ink)}
 .menu .del{color:var(--danger)}
+.size{display:inline-block;margin:2px 0 0 8px;padding:1px 9px;border:1px solid var(--line);border-radius:999px;font-size:14px;color:var(--ink);background:var(--bg);vertical-align:1px}
+#size{width:96px;flex:none;text-align:center;padding:14px 8px}
 .empty{text-align:center;color:var(--soft);padding:12px 0 18px;font-size:15px}
 .tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
 .tools .danger{margin-left:auto}
@@ -93,8 +91,8 @@ li.ordli small{color:var(--soft);font-weight:500}
   <h1 id="title"></h1>
   <p class="count" id="count"></p>
   <div class="add" id="addbox">
-    <input type="text" id="new" placeholder="Ex : Tilleul 8/10" autocomplete="off">
-    <div id="sugg" class="sugg" hidden></div>
+    <input type="text" id="new" placeholder="Variété (ex : Tilleul argenté)" autocomplete="off">
+    <input type="text" id="size" placeholder="Taille (8/10)" autocomplete="off" autocapitalize="off" aria-label="Taille">
     <input type="number" id="qty" value="1" min="1" inputmode="numeric" aria-label="Quantité">
     <select id="sec" aria-label="Section"></select>
     <button id="addBtn">Ajouter</button>
@@ -106,7 +104,6 @@ li.ordli small{color:var(--soft);font-weight:500}
     <button class="ghost" id="secBtn">Nouvelle section</button>
     <button class="ghost" id="exportBtn">Exporter le journal complet</button>
     <button class="ghost" id="histBtn">Historique</button>
-    <button class="ghost" id="suggBtn">Suggestions</button>
     <button class="ghost danger" id="resetBtn">Archiver les terminés</button>
   </div>
   <details class="sync"><summary>Synchronisation GitHub <span id="syncst">non configurée</span></summary>
@@ -132,7 +129,7 @@ const PL=['Normale','Haute','Urgente'];
 let UI=Object.assign({hist:0,tab:0,hide:[false,false,false],col:{}},ld(UIKEY,{}));
 let CFG=Object.assign({repo:'',token:'',dev:''},ld(CFGKEY,{}));
 if(!CFG.dev){CFG.dev='tel-'+Math.random().toString(36).slice(2,6);sv(CFGKEY,CFG)}
-let OPS=ld(OPSKEY,[]),S={sections:[],items:[],log:[]},T=UI.tab,cur='gen',ordering=false,toastId=null,toastTimer=null,lastT=0,SN=[],lastSug=null,menuId=null;
+let OPS=ld(OPSKEY,[]),S={sections:[],items:[],log:[]},T=UI.tab,cur='gen',ordering=false,toastId=null,toastTimer=null,lastT=0,menuId=null;
 OPS.forEach(o=>{if(o.dev===CFG.dev)lastT=Math.max(lastT,o.t)});
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmt=iso=>{const d=new Date(iso);return d.toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'2-digit'})+' à '+d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})};
@@ -150,7 +147,7 @@ const items=()=>S.items.filter(live);
 function reduce(o){
   const a=o.a,iso=new Date(o.t).toISOString();
   const item=id=>S.items.find(i=>i.id===id);
-  const L=(act,it,qty)=>S.log.push({t:iso,dev:o.dev||'',iid:it?it.id:'',action:act,section:it?sec(it.sectionId).name||'':'',item:it?it.name:'',qty});
+  const L=(act,it,qty)=>S.log.push({t:iso,dev:o.dev||'',iid:it?it.id:'',action:act,section:it?sec(it.sectionId).name||'':'',item:it?it.name:'',size:it?it.size||'':'',qty});
   const LS=(act,s)=>S.log.push({t:iso,dev:o.dev||'',action:act,section:s.name,item:'',qty:''});
   let x,s;
   switch(o.ty){
@@ -161,8 +158,9 @@ function reduce(o){
   case 'secdel':if(s=sec(a.sid),s.id){S.items.filter(i=>i.sectionId===s.id).forEach(i=>L('supprimé',i,i.qty));
     S.items=S.items.filter(i=>i.sectionId!==s.id);S.sections=S.sections.filter(z=>z!==s);LS('section supprimée',s)}break;
   case 'secswap':{const A=S.sections,i=A.findIndex(z=>z.id===a.x),j=A.findIndex(z=>z.id===a.y);if(i>=0&&j>=0)[A[i],A[j]]=[A[j],A[i]]}break;
-  case 'add':if(!item(a.iid)&&sec(a.sid).id){x={id:a.iid,name:a.name,qty:a.qty,sectionId:a.sid,start:a.start||0,st:[[],[],[]]};S.items.push(x);L('ajout'+(x.start?' ('+TABS[x.start].n.toLowerCase()+')':''),x,a.qty)}break;
+  case 'add':if(!item(a.iid)&&sec(a.sid).id){x={id:a.iid,name:a.name,size:a.size||'',qty:a.qty,sectionId:a.sid,start:a.start||0,st:[[],[],[]]};S.items.push(x);L('ajout'+(x.start?' ('+TABS[x.start].n.toLowerCase()+')':''),x,a.qty)}break;
   case 'del':if(x=item(a.iid)){L('supprimé',x,x.qty);S.items=S.items.filter(z=>z!==x)}break;
+  case 'edit':if(x=item(a.iid)){x.name=a.name;x.size=a.size||'';L('variété/taille modifiée',x,x.qty)}break;
   case 'qty':if((x=item(a.iid))&&a.qty>=x.st[x.start||0].length){x.qty=a.qty;if(!(got(x,2)>=x.qty))delete x.arch;L('quantité modifiée',x,a.qty)}break;
   case 'move':if((x=item(a.iid))&&sec(a.sid).id){x.sectionId=a.sid;L('déplacé',x,x.qty)}break;
   case 'prio':if(x=item(a.iid)){x.prio=a.p;L('priorité → '+PL[a.p],x,x.qty)}break;
@@ -176,7 +174,7 @@ function reduce(o){
 }
 function rebuild(){
   const all=[{id:'init',t:0,ty:'secadd',a:{sid:'gen',name:'Général'}},...OPS].sort((x,y)=>x.t-y.t||(x.id<y.id?-1:1));
-  S={sections:[],items:[],log:[],sugg:[]};all.forEach(o=>{try{reduce(o)}catch(e){}});
+  S={sections:[],items:[],log:[]};all.forEach(o=>{try{reduce(o)}catch(e){}});
   if(!sec(cur).id)cur=S.sections[0]?S.sections[0].id:'gen';
 }
 function op(ty,a){
@@ -249,7 +247,7 @@ function itemHTML(i){
   const own=i.prio||0,sp=sec(i.sectionId).prio||0,ef=Math.max(own,sp),pc=(!fn&&ef)?'p'+ef:'';
   if(ordering){
     const sib=view(sec(i.sectionId),true),k=sib.indexOf(i);
-    return `<li class="ordli ${pc}"><span class="name">${esc(i.name)} <small>× ${i.qty}${fn?' · terminé':''}</small></span><div class="ord">
+    return `<li class="ordli ${pc}"><span class="name">${esc(i.name)}${i.size?` <small>${esc(i.size)}</small>`:''} <small>× ${i.qty}${fn?' · terminé':''}</small></span><div class="ord">
       <button class="ghost" data-itup="${i.id}" ${(k===0||fini(sib[k-1],T)!==fn)?'disabled':''} aria-label="Monter">▲</button>
       <button class="ghost" data-itdown="${i.id}" ${(k===sib.length-1||fini(sib[k+1],T)!==fn)?'disabled':''} aria-label="Descendre">▼</button></div></li>`;
   }
@@ -257,7 +255,7 @@ function itemHTML(i){
   const lock=T<2&&got(i,T+1)>=n,open=menuId===i.id;
   return `<li class="${fn?'done':pc}"><div class="top">
     <button class="check" data-ok="${i.id}" ${fn?'disabled':''} aria-label="Valider un arbre">${fn?'✓':av}</button>
-    <div class="info"><span class="name">${esc(i.name)}</span>
+    <div class="info"><span class="name">${esc(i.name)}</span>${i.size?`<span class="size">${esc(i.size)}</span>`:''}
     ${i.note?`<span class="sub cm">💬 ${esc(i.note)}</span>`:''}
     <span class="sub"><b>${n}</b> sur ${i.qty} ${V.v}${n>1?'s':''}${fn?(n<i.qty?' · en attente':''):' · '+av+' à '+V.vi}</span>
     ${pc?`<span class="sub pr ${pc}"><b>Priorité ${PL[ef].toLowerCase()}</b>${sp>own?' (section)':''}</span>`:''}
@@ -267,7 +265,8 @@ function itemHTML(i){
     ${open?`<div class="menu"><button class="ghost" data-undo="${i.id}" ${(n&&!lock)?'':'disabled'}>Annuler le dernier</button>
     <button class="ghost pbtn p${own}" data-prio="${i.id}">Priorité : ${PL[own].toLowerCase()}</button>
     <button class="ghost" data-note="${i.id}">${i.note?'Modifier le commentaire':'Commentaire'}</button>
-    ${T===(i.start||0)?`<button class="ghost" data-qty="${i.id}">Quantité</button>
+    ${T===(i.start||0)?`<button class="ghost" data-edit="${i.id}">Variété / taille</button>
+    <button class="ghost" data-qty="${i.id}">Quantité</button>
     <label>Section<select data-move="${i.id}" aria-label="Changer de section">${opts}</select></label>
     <button class="ghost del" data-del="${i.id}">Supprimer</button>`:''}</div>`:''}</li>`;
 }
@@ -280,10 +279,9 @@ function render(){
   const capT=items().reduce((s,i)=>s+cap(i,T),0),fait=items().reduce((s,i)=>s+got(i,T),0);
   $('count').textContent=items().length?fait+' '+V.v+(fait>1?'s':'')+' sur '+capT+' · reste '+(capT-fait):'';
   $('addbox').style.display='flex';
-  $('new').placeholder='Ex : Tilleul 8/10'+(T?' (ajouté directement dans '+V.n+')':'');
+  $('new').placeholder='Variété'+(T?' (ajoutée directement dans '+V.n+')':' (ex : Tilleul argenté)');
   const nDone=items().filter(i=>shown(i,T)&&fini(i,T)).length;
   $('histBtn').textContent=UI.hist>0?'Historique : '+UI.hist+' j':'Historique';
-  $('suggBtn').textContent='Suggestions ('+LIST.length+')';
   $('hideBtn').textContent=UI.hide[T]?'Afficher terminés'+(nDone?' ('+nDone+')':''):'Masquer terminés';
   $('hideBtn').classList.toggle('on',!!UI.hide[T]);
   $('ordBtn').textContent=ordering?'Terminé':'Réorganiser';
@@ -313,11 +311,11 @@ function render(){
 function add(){
   const v=$('new').value.trim();if(!v)return;
   cur=$('sec').value;UI.col[cur]=false;saveUI();
-  op('add',{iid:uid(),name:v,qty:Math.max(1,parseInt($('qty').value)||1),sid:cur,start:T});
-  $('new').value='';$('qty').value=1;$('sugg').hidden=true;
+  op('add',{iid:uid(),name:v,size:$('size').value.trim(),qty:Math.max(1,parseInt($('qty').value)||1),sid:cur,start:T});
+  $('new').value='';$('size').value='';$('qty').value=1;
 }
 $('addBtn').onclick=add;
-$('new').addEventListener('keydown',e=>{if(e.key==='Enter')add()});
+['new','size','qty'].forEach(k=>$(k).addEventListener('keydown',e=>{if(e.key==='Enter')add()}));
 $('sec').onchange=e=>{cur=e.target.value};
 $('tabs').onclick=e=>{const b=e.target.closest('button');if(!b)return;T=+b.dataset.tab;ordering=false;menuId=null;$('toast').hidden=true;saveUI();render()};
 $('ordBtn').onclick=()=>{ordering=!ordering;render()};
@@ -371,6 +369,12 @@ $('list').addEventListener('click',e=>{
     if(UI.hide[T]&&last)showToast(id,name);
   }
   else if(d.undo)op('undo',{iid:d.undo,st:T});
+  else if(d.edit){
+    const it=item(d.edit);
+    const n=prompt('Variété',it.name);if(n===null)return;
+    const sz=prompt('Taille (ex : 8/10, laisser vide si aucune)',it.size||'');if(sz===null)return;
+    if(n.trim())op('edit',{iid:it.id,name:n.trim(),size:sz.trim()});
+  }
   else if(d.qty){
     const it=item(d.qty),min=Math.max(1,got(it,it.start||0));
     const r=prompt('Quantité totale pour « '+it.name+' » (minimum '+min+')',it.qty);if(r===null)return;
@@ -381,9 +385,9 @@ $('list').addEventListener('click',e=>{
 });
 function csvText(rows){
   const q=s=>'"'+String(s).replace(/"/g,'""')+'"';
-  return '\ufeff'+['horodatage;date;heure;action;section;arbre;quantité;appareil'].concat(rows.map(l=>{
+  return '\ufeff'+['horodatage;date;heure;action;section;variété;taille;quantité;appareil'].concat(rows.map(l=>{
     const d=new Date(l.t);
-    return [l.t,d.toLocaleDateString('fr-FR'),d.toLocaleTimeString('fr-FR'),l.action,q(l.section||''),q(l.item),l.qty===undefined?1:l.qty,l.dev||''].join(';');
+    return [l.t,d.toLocaleDateString('fr-FR'),d.toLocaleTimeString('fr-FR'),l.action,q(l.section||''),q(l.item),q(l.size||''),l.qty===undefined?1:l.qty,l.dev||''].join(';');
   })).join('\n');
 }
 $('exportBtn').onclick=()=>{
@@ -429,40 +433,6 @@ $('cfgFile').onchange=async e=>{
 };
 $('cfgRepo').value=CFG.repo;$('cfgToken').value=CFG.token;$('cfgDev').value=CFG.dev;
 
-// ---- Suggestions
-let LIST=ld('arrachage-sugg',[]);SN=LIST.map(x=>[x,String(x).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')]);
-const norm=s=>String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-const parseList=t=>{const seen=new Set(),out=[];t.replace(/^\ufeff/,'').split(/\r?\n/).forEach(l=>{const x=l.split(';')[0].replace(/^"|"$/g,'').trim();if(x&&!seen.has(x.toLowerCase())){seen.add(x.toLowerCase());out.push(x)}});return out};
-function suggest(){
-  const v=norm($('new').value.trim()),box=$('sugg');
-  if(!v||!SN.length){box.hidden=true;return}
-  const tk=v.split(/\s+/),a=[],b=[];
-  for(const [o,n] of SN){if(tk.every(t=>n.includes(t))){(n.startsWith(v)?a:b).push(o);if(a.length>=8)break}}
-  const r=[...a,...b].slice(0,8).filter(o=>norm(o)!==v);
-  box.innerHTML=r.map(o=>`<button type="button" data-s="${esc(o)}">${esc(o)}</button>`).join('');
-  box.hidden=!r.length;
-}
-$('new').addEventListener('input',suggest);
-$('new').addEventListener('blur',()=>setTimeout(()=>{$('sugg').hidden=true},200));
-$('sugg').addEventListener('pointerdown',e=>{
-  const b=e.target.closest('button');if(!b)return;
-  e.preventDefault();$('new').value=b.dataset.s;$('sugg').hidden=true;$('qty').focus();$('qty').select();
-});
-// La liste est lue dans suggestions.txt (à côté de index.html) et gardée en copie locale pour le hors-ligne
-function setList(a){LIST=a;SN=a.map(x=>[x,norm(x)]);sv('arrachage-sugg',a)}
-async function loadList(manual){
-  try{
-    const r=await fetch('suggestions.txt?_='+Date.now(),{cache:'no-store'});
-    if(!r.ok)throw 0;
-    setList(parseList(await r.text()));
-    if(manual)alert(LIST.length+' suggestions chargées.');
-  }catch(e){
-    if(manual)alert('Fichier suggestions.txt introuvable à côté de index.html'+(LIST.length?' (la copie déjà enregistrée sur ce téléphone est conservée).':'.'));
-  }
-  render();
-}
-$('suggBtn').onclick=()=>loadList(true);
-
 // ---- Démarrage
 rebuild();
 if(!OPS.length){
@@ -474,7 +444,8 @@ if(!OPS.length){
     op('import',{sections:secs,items,log:old.log||[]});
   }
 }
-render();loadList();sync();
+try{localStorage.removeItem('arrachage-sugg')}catch(e){}
+render();sync();
 setInterval(()=>sync(),45000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden)sync()});
 window.addEventListener('online',()=>sync());
