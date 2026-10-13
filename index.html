@@ -142,6 +142,13 @@ OPS.forEach(o=>{if(o.dev===CFG.dev)lastT=Math.max(lastT,o.t)});
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmt=iso=>{const d=new Date(iso);return d.toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'2-digit'})+' à '+d.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'})};
 const today=()=>{const d=new Date(),z=n=>String(n).padStart(2,'0');return d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate())};
+const isoWeek=d=>{const t=new Date(d.getFullYear(),d.getMonth(),d.getDate());t.setDate(t.getDate()+3-((t.getDay()+6)%7));const y=t.getFullYear(),j=new Date(y,0,4);return [y,1+Math.round(((t-j)/864e5-3+((j.getDay()+6)%7))/7)]};
+const isoMonday=(y,w)=>{const j=new Date(y,0,4);return new Date(y,0,4-((j.getDay()+6)%7)+(w-1)*7)};
+const ymd=d=>{const z=n=>String(n).padStart(2,'0');return d.getFullYear()+'-'+z(d.getMonth()+1)+'-'+z(d.getDate())};
+const WK=/^(\d{4})-W(\d\d)$/;
+const dayEnd=s=>{const m=WK.exec(s);if(!m)return s;const d=isoMonday(+m[1],+m[2]);d.setDate(d.getDate()+6);return ymd(d)};
+const weekRange=s=>{const m=WK.exec(s);if(!m)return '';const a=isoMonday(+m[1],+m[2]),b=new Date(a);b.setDate(b.getDate()+6);const f=d=>d.toLocaleDateString('fr-FR',{day:'2-digit',month:'2-digit'});return f(a)+' au '+f(b)};
+const dateLabel=s=>{const m=WK.exec(s);return m?'S'+(+m[2])+(+m[1]!==new Date().getFullYear()?' '+m[1]:''):fmtDay(s)};
 const fmtDay=s=>new Date(s+'T12:00:00').toLocaleDateString('fr-FR',{weekday:'short',day:'2-digit',month:'2-digit'});
 const sec=id=>S.sections.find(s=>s.id===id)||{};
 const cap=(i,t)=>{const s=i.start||0;return t<s?0:t===s?i.qty:i.st[t-1].length};
@@ -301,15 +308,17 @@ function render(){
     if(T>0&&!its.length)return '';
     const t=its.reduce((a,i)=>a+cap(i,T),0),f=its.reduce((a,i)=>a+got(i,T),0),sp=s.prio||0,vis=view(s),k=S.sections.indexOf(s),col=UI.col[s.id],open=menuId===s.id;
     if(UI.hide[T]&&!ordering&&its.length&&!vis.length)return '';
-    const late=s.date&&s.date<today()&&f<t;
+    const late=s.date&&dayEnd(s.date)<today()&&f<t,wk=WK.exec(s.date||'');
     return `<div class="sechead ${sp?'p'+sp:''}"><button class="tog" data-toggle="${s.id}" aria-expanded="${!col}">
       <span>${col?'▸':'▾'}</span><span class="nm">${esc(s.name)}</span><small>${f}/${t}</small></button>
-      ${s.date?`<span class="dt ${late?'late':''}">📅 ${fmtDay(s.date)}</span>`:''}
+      ${s.date?`<span class="dt ${late?'late':''}">📅 ${dateLabel(s.date)}</span>`:''}
       ${ordering?`<div class="ord"><button class="ghost" data-secup="${s.id}" ${k===0?'disabled':''} aria-label="Monter la section">▲</button>
       <button class="ghost" data-secdown="${s.id}" ${k===S.sections.length-1?'disabled':''} aria-label="Descendre la section">▼</button></div>`
       :`<button class="ghost opt" data-menu="${s.id}" aria-expanded="${open}" aria-label="Options de la section">${open?'✕':'⋯'}</button>`}</div>`
       +(open&&!ordering?`<div class="smenu menu"><button class="ghost pbtn p${sp}" data-sprio="${s.id}">Priorité : ${PL[sp].toLowerCase()}</button>
-      <label>Date<input type="date" data-sdate="${s.id}" value="${s.date||''}" aria-label="Date de la section"></label>
+      <label>Date<input type="date" data-sdate="${s.id}" value="${wk?'':(s.date||'')}" aria-label="Date de la section"></label>
+      <label>Semaine n°<input type="number" data-sweek="${s.id}" min="1" max="53" inputmode="numeric" placeholder="ex : 42" value="${wk?+wk[2]:''}" aria-label="Numéro de semaine"></label>
+      ${wk?`<span class="sub" style="padding:0 4px">Semaine ${+wk[2]} de ${wk[1]} : du ${weekRange(s.date)}</span>`:''}
       <button class="ghost" data-snote="${s.id}">${s.note?'Modifier le commentaire':'Commentaire'}</button>
       <button class="ghost" data-rename="${s.id}">Renommer</button>
       <button class="ghost del" data-delsec="${s.id}">Supprimer la section</button></div>`:'')
@@ -349,6 +358,14 @@ $('list').addEventListener('change',e=>{
   const d=e.target.dataset;
   if(d.move)op('move',{iid:d.move,sid:e.target.value});
   else if(d.sdate)op('sdate',{sid:d.sdate,date:e.target.value});
+  else if(d.sweek){
+    const v=e.target.value.trim();
+    if(!v){op('sdate',{sid:d.sweek,date:''});return}
+    const w=parseInt(v),[cy,cw]=isoWeek(new Date());
+    const y=w<cw-26?cy+1:cy;
+    if(!(w>=1)||w>isoWeek(new Date(y,11,28))[1]){alert('Numéro de semaine invalide : '+y+' compte '+isoWeek(new Date(y,11,28))[1]+' semaines.');render();return}
+    op('sdate',{sid:d.sweek,date:y+'-W'+String(w).padStart(2,'0')});
+  }
 });
 $('list').addEventListener('click',e=>{
   const b=e.target.closest('button');if(!b||b.disabled)return;
