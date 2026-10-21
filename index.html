@@ -66,7 +66,8 @@ li.ordli{display:flex;align-items:center;gap:12px}
 li.ordli .name{flex:1}
 li.ordli small{color:var(--soft);font-weight:500}
 .ord{display:flex;gap:6px;flex:none}
-.ord .ghost{padding:0;width:40px;height:40px;font-size:18px}
+.ord{gap:4px}
+.ord .ghost{padding:0;width:36px;height:40px;font-size:17px}
 .note{background:var(--card);border-left:4px solid var(--soft);border-radius:8px;padding:5px 10px;margin:0 0 6px;font-size:14px;word-break:break-word}
 .sub.cm{color:var(--ink);font-style:italic}
 .sync{margin-top:20px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px}.sync summary{font-weight:600;cursor:pointer}.sync summary span{font-weight:500;font-size:13px;color:var(--soft);margin-left:6px}.sync label{display:block;font-size:14px;color:var(--soft);margin-top:10px}.sync input{width:100%;padding:10px}.sync .row{display:flex;gap:8px;margin-top:12px}
@@ -90,6 +91,7 @@ li.ordli small{color:var(--soft);font-weight:500}
 #size{width:96px;flex:none;text-align:center;padding:14px 8px}
 .size.forme{background:var(--head);font-weight:600}
 #form{width:104px;flex:none;padding:14px 6px}
+.sechead.emptysec{opacity:.6}
 .empty{text-align:center;color:var(--soft);padding:6px 0 10px;font-size:14px}
 .tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
 .tools .danger{margin-left:auto}
@@ -164,6 +166,9 @@ const shown=(i,t)=>cap(i,t)>0;
 const lastDone=i=>{const l=i.st[2];return l.length?+new Date(l[l.length-1]):i.arch};
 const live=i=>!i.arch||(UI.hist>0&&Date.now()-lastDone(i)<=UI.hist*864e5);
 const items=()=>S.items.filter(live);
+const secIts=s=>items().filter(i=>i.sectionId===s.id&&shown(i,T));
+// Sections vides (rien à faire dans le volet) : envoyées à la fin et considérées comme terminées
+const secList=()=>{const a=S.sections.filter(s=>secIts(s).length),b=S.sections.filter(s=>!secIts(s).length);return T>0?a:[...a,...b]};
 
 // ---- Moteur : l'état est reconstruit en rejouant toutes les opérations (tous téléphones) dans l'ordre chronologique
 function reduce(o){
@@ -189,6 +194,8 @@ function reduce(o){
   case 'move':if((x=item(a.iid))&&sec(a.sid).id){x.sectionId=a.sid;L('déplacé',x,x.qty)}break;
   case 'prio':if(x=item(a.iid)){x.prio=a.p;L('priorité → '+PL[a.p],x,x.qty)}break;
   case 'note':if(x=item(a.iid)){x.note=a.note;L('commentaire modifié',x,x.qty)}break;
+  case 'secmove':case 'itmove':{const A=o.ty==='secmove'?S.sections:S.items,id=a.sid||a.iid,i=A.findIndex(z=>z.id===id);
+    if(i>=0&&A.some(z=>z.id===a.ref)&&id!==a.ref){const m=A.splice(i,1)[0],r=A.findIndex(z=>z.id===a.ref);A.splice(a.where==='before'?r:r+1,0,m)}}break;
   case 'itswap':{const A=S.items,i=A.findIndex(z=>z.id===a.x),j=A.findIndex(z=>z.id===a.y);if(i>=0&&j>=0)[A[i],A[j]]=[A[j],A[i]]}break;
   case 'ok':if((x=item(a.iid))&&avail(x,a.st)>0){x.st[a.st].push(iso);L(TABS[a.st].act,x,1)}break;
   case 'undo':if((x=item(a.iid))&&got(x,a.st)&&!(a.st<2&&got(x,a.st+1)>=got(x,a.st))){x.st[a.st].pop();delete x.arch;L('annulé '+TABS[a.st].n.toLowerCase(),x,1)}break;
@@ -272,8 +279,10 @@ function itemHTML(i){
   if(ordering){
     const sib=view(sec(i.sectionId),true),k=sib.indexOf(i);
     return `<li class="ordli ${pc}"><span class="name">${esc(i.name)}${i.form?` <small>${esc(i.form)}</small>`:''}${i.size?` <small>${esc(i.size)}</small>`:''} <small>× ${i.qty}${fn?' · terminé':''}</small></span><div class="ord">
+      <button class="ghost" data-ittop="${i.id}" ${(k===0||fini(sib[k-1],T)!==fn)?'disabled':''} aria-label="Tout en haut">⇑</button>
       <button class="ghost" data-itup="${i.id}" ${(k===0||fini(sib[k-1],T)!==fn)?'disabled':''} aria-label="Monter">▲</button>
-      <button class="ghost" data-itdown="${i.id}" ${(k===sib.length-1||fini(sib[k+1],T)!==fn)?'disabled':''} aria-label="Descendre">▼</button></div></li>`;
+      <button class="ghost" data-itdown="${i.id}" ${(k===sib.length-1||fini(sib[k+1],T)!==fn)?'disabled':''} aria-label="Descendre">▼</button>
+      <button class="ghost" data-itbot="${i.id}" ${(k===sib.length-1||fini(sib[k+1],T)!==fn)?'disabled':''} aria-label="Tout en bas">⇓</button></div></li>`;
   }
   const opts=S.sections.map(s=>`<option value="${s.id}" ${s.id===i.sectionId?'selected':''}>${esc(s.name)}</option>`).join('');
   const lock=T<2&&got(i,T+1)>=n,open=menuId===i.id;
@@ -302,25 +311,28 @@ function render(){
   $('count').textContent=items().length?fait+' '+V.v+(fait>1?'s':'')+' sur '+capT+' · reste '+(capT-fait):'';
   $('addbox').style.display='flex';
   $('new').placeholder='Variété'+(T?' (ajoutée directement dans '+V.n+')':' (ex : Tilleul argenté)');
-  const nDone=items().filter(i=>shown(i,T)&&fini(i,T)).length;
+  const nDone=items().filter(i=>shown(i,T)&&fini(i,T)).length+(T===0?S.sections.filter(s=>!secIts(s).length).length:0);
   $('histBtn').textContent=UI.hist>0?'Historique : '+UI.hist+' j':'Historique';
   $('hideBtn').textContent=UI.hide[T]?'Afficher terminés'+(nDone?' ('+nDone+')':''):'Masquer terminés';
   $('hideBtn').classList.toggle('on',!!UI.hide[T]);
   $('ordBtn').textContent=ordering?'Terminé':'Réorganiser';
   $('ordBtn').classList.toggle('on',ordering);
-  $('hint').textContent=ordering?'Utilisez ▲ ▼ pour changer l\'ordre.':'';
+  $('hint').textContent=ordering?'▲ ▼ : d\'un cran · ⇑ ⇓ : tout en haut / en bas':'';
   $('sec').innerHTML=S.sections.map(s=>`<option value="${s.id}" ${s.id===cur?'selected':''}>${esc(s.name)}</option>`).join('');
-  $('list').innerHTML=S.sections.map(s=>{
-    const its=items().filter(i=>i.sectionId===s.id&&shown(i,T));
-    if(T>0&&!its.length)return '';
-    const t=its.reduce((a,i)=>a+cap(i,T),0),f=its.reduce((a,i)=>a+got(i,T),0),sp=s.prio||0,vis=view(s),k=S.sections.indexOf(s),col=UI.col[s.id],open=menuId===s.id;
-    if(UI.hide[T]&&!ordering&&its.length&&!vis.length)return '';
+  const SL=secList();
+  $('list').innerHTML=SL.map(s=>{
+    const its=secIts(s);
+    const t=its.reduce((a,i)=>a+cap(i,T),0),f=its.reduce((a,i)=>a+got(i,T),0),sp=s.prio||0,vis=view(s),k=SL.indexOf(s),col=UI.col[s.id],open=menuId===s.id;
+    const grp=SL.filter(x=>(secIts(x).length>0)===(its.length>0)),gk=grp.indexOf(s);
+    if(UI.hide[T]&&!ordering&&(!its.length||!vis.length))return '';
     const late=s.date&&dayEnd(s.date)<today()&&f<t,wk=WK.exec(s.date||'');
-    return `<div class="sechead ${sp?'p'+sp:''}"><button class="tog" data-toggle="${s.id}" aria-expanded="${!col}">
+    return `<div class="sechead ${sp?'p'+sp:''} ${its.length?'':'emptysec'}"><button class="tog" data-toggle="${s.id}" aria-expanded="${!col}">
       <span>${col?'▸':'▾'}</span><span class="nm">${esc(s.name)}</span><small>${f}/${t}</small></button>
       ${s.date?`<span class="dt ${late?'late':''}">📅 ${dateLabel(s.date)}</span>`:''}
-      ${ordering?`<div class="ord"><button class="ghost" data-secup="${s.id}" ${k===0?'disabled':''} aria-label="Monter la section">▲</button>
-      <button class="ghost" data-secdown="${s.id}" ${k===S.sections.length-1?'disabled':''} aria-label="Descendre la section">▼</button></div>`
+      ${ordering?`<div class="ord"><button class="ghost" data-sectop="${s.id}" ${gk===0?'disabled':''} aria-label="Section tout en haut">⇑</button>
+      <button class="ghost" data-secup="${s.id}" ${gk===0?'disabled':''} aria-label="Monter la section">▲</button>
+      <button class="ghost" data-secdown="${s.id}" ${gk===grp.length-1?'disabled':''} aria-label="Descendre la section">▼</button>
+      <button class="ghost" data-secbot="${s.id}" ${gk===grp.length-1?'disabled':''} aria-label="Section tout en bas">⇓</button></div>`
       :`<button class="ghost opt" data-menu="${s.id}" aria-expanded="${open}" aria-label="Options de la section">${open?'✕':'⋯'}</button>`}</div>`
       +(open&&!ordering?`<div class="smenu menu"><button class="ghost pbtn p${sp}" data-sprio="${s.id}">Priorité : ${PL[sp].toLowerCase()}</button>
       <label>Date<input type="date" data-sdate="${s.id}" value="${wk?'':(s.date||'')}" aria-label="Date de la section"></label>
@@ -333,7 +345,7 @@ function render(){
       +(col?'':!its.length?'<p class="empty">Aucune ligne dans cette section.</p>'
         :!vis.length?'<p class="empty">Toutes les lignes sont terminées.</p>'
         :`<ul>${vis.map(itemHTML).join('')}</ul>`);
-  }).join('')||(UI.hide[T]&&items().some(i=>shown(i,T))?'<p class="empty">Tout est terminé dans ce volet.</p>':'');
+  }).join('')||(UI.hide[T]&&(items().some(i=>shown(i,T))||(T===0&&S.sections.length))?'<p class="empty">Tout est terminé dans ce volet.</p>':'');
 }
 
 // ---- Actions
@@ -394,13 +406,17 @@ $('list').addEventListener('click',e=>{
     const r=prompt('Commentaire sur '+(d.note?'« ':'la section « ')+o.name+' » (laisser vide pour effacer)',o.note||'');if(r===null)return;
     op(d.note?'note':'snote',d.note?{iid:o.id,note:r.trim()}:{sid:o.id,note:r.trim()});
   }
-  else if(d.secup||d.secdown){
-    const A=S.sections,k=A.findIndex(s=>s.id===(d.secup||d.secdown)),j=k+(d.secup?-1:1);
-    if(j>=0&&j<A.length)op('secswap',{x:A[k].id,y:A[j].id});
+  else if(d.secup||d.secdown||d.sectop||d.secbot){
+    const id=d.secup||d.secdown||d.sectop||d.secbot,L=secList(),s=sec(id),g=x=>secIts(x).length>0;
+    const grp=L.filter(x=>g(x)===g(s)),k=grp.indexOf(s);
+    if(d.sectop||d.secbot){const top=!!d.sectop,r=top?grp[0]:grp[grp.length-1];if(r&&r!==s)op('secmove',{sid:s.id,ref:r.id,where:top?'before':'after'})}
+    else{const o=grp[k+(d.secup?-1:1)];if(o)op('secswap',{x:s.id,y:o.id})}
   }
-  else if(d.itup||d.itdown){
-    const it=item(d.itup||d.itdown),sib=view(sec(it.sectionId),true),o=sib[sib.indexOf(it)+(d.itup?-1:1)];
-    if(o)op('itswap',{x:it.id,y:o.id});
+  else if(d.itup||d.itdown||d.ittop||d.itbot){
+    const it=item(d.itup||d.itdown||d.ittop||d.itbot),sib=view(sec(it.sectionId),true),fn=fini(it,T);
+    const grp=sib.filter(x=>fini(x,T)===fn);
+    if(d.ittop||d.itbot){const top=!!d.ittop,r=top?grp[0]:grp[grp.length-1];if(r&&r!==it)op('itmove',{iid:it.id,ref:r.id,where:top?'before':'after'})}
+    else{const o=grp[grp.indexOf(it)+(d.itup?-1:1)];if(o)op('itswap',{x:it.id,y:o.id})}
   }
   else if(d.ok){
     const it=item(d.ok);if(avail(it,T)<=0)return;
